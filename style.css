@@ -1,0 +1,8 @@
+.border{
+    border-radius: 20px;
+    min-width: 300px;
+}
+
+#input{
+  min-width: 260px;
+}
