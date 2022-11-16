@@ -1,0 +1,19 @@
+.border{
+    border-radius: 20px;
+    min-width: 300px;
+}
+
+#input{
+  min-width: 260px;
+}
+
+.btn-outline-primary{
+    --bs-btn-color: purple !important;
+    --bs-btn-border-color: purple !important;
+    --bs-btn-hover-bg: purple !important;
+    --bs-btn-hover-border-color: purple !important;
+    --bs-btn-active-bg: purple !important;
+    --bs-btn-active-border-color: purple !important;
+    --bs-btn-disabled-color: purple !important;
+    --bs-btn-disabled-border-color: purple !important;
+}
