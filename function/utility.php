@@ -73,10 +73,15 @@
 
     function searchAccount($text) {
         global $conn;
-        $sql="SELECT * FROM account WHERE username='$text'";
+        
+        $accounts=array();
+        $sql="SELECT * FROM accounts WHERE username LIKE '$text%'";
         $result=$conn->query($sql);
         if($result->num_rows>0) {
-            
+            while ($row=$result->fetch_assoc()) {
+                $accounts[]=$row;
+            }
         }
+        return json_encode($accounts);
     }
 ?>
