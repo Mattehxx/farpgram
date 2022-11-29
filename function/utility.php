@@ -70,4 +70,13 @@
         }
         $conn->close();
     }
+
+    function searchAccount($text) {
+        global $conn;
+        $sql="SELECT * FROM account WHERE username='$text'";
+        $result=$conn->query($sql);
+        if($result->num_rows>0) {
+            
+        }
+    }
 ?>
