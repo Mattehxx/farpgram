@@ -1,0 +1,94 @@
+html{
+    background-color: rgb(34, 34, 34);
+    overflow-x: hidden;
+}
+
+#inner-container{
+    font-family: 'Poppins', sans-se if;
+    margin-top: 50px;
+    border: solid;
+    border-color: rgb(20, 20, 20);
+    padding: 10px;
+    background-color: rgb(20, 20, 20);
+}
+
+#logo{
+    min-width: 100px;
+    width: 100px;
+}
+
+
+#funzioni{
+    border-right: solid;
+    border-color: rgb(43, 43, 43);
+    padding-left: 5%;
+}
+
+.link{
+    text-decoration: none;
+}
+
+#barra-ricerca{
+    background-color: rgb(20, 20, 20) !important;
+    border-color: white  !important;
+}
+
+#btn-altro{
+    background-color: purple;
+    max-width: 100px;
+}
+
+.dropup{
+    margin-top: 100% !important;
+}
+
+
+h5{
+    padding-left: 5%;
+    font-size: larger;
+    color: white;
+}
+
+h4{
+    padding-top: 40px;
+    color: white;
+    font-size: larger;
+}
+
+h4:hover{
+    color: purple;
+}
+
+
+.card{
+    margin-top: 10px;
+    width: 20rem;
+    margin-left: 32%;
+} 
+
+.card-title{
+    color: white;
+    padding-left: 0px;
+}
+
+
+#profilo{
+    margin-right: 0px;
+    border-left: solid;
+    border-color: rgb(43, 43, 43);
+    color: white;
+}
+
+#profile-image{
+    max-width: 70px;
+}
+
+.sidebar{
+    position: sticky;
+    top: 2rem;
+}
+
+
+.white{
+    color: white;
+}
