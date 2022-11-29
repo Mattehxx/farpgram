@@ -45,34 +45,3 @@ function getCurrentPosition() {
         locations.appendChild(placeNode);    // Aggiungiamo il paragrafo nell'html
     }
 }
-
-const txt=document.getElementById("txt");
-
-txt.addEventListener("input", function() {
-    //chiamare funzione php per la query al DB
-
-    //json=searchAccount();
-
-    json
-    var ul=document.getElementById("searchAccounts");
-    
-    var li=document.createElement("li");
-    li.classList.add("list-group-item text-bg-dark");
-    ul.appendChild(li);
-
-    var a=document.createElement("a");
-    a.href="#";
-    a.classList.add("link");
-    li.appendChild(a);
-
-    var img=document.createElement("img");
-    img.src="Images\colorful.PNG";
-    a.classList.add("rounded-circle");
-    a.style.maxWidth="2rem";
-    a.appendChild(img);
-
-    var span=document.createElement("span");
-    span.classList.add("white");
-    span.innerHTML=json["username"];
-    a.appendChild(span);
-})
