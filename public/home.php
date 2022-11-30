@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
+</head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
       <div class="container-fluid" id="inner-container">
@@ -27,31 +27,33 @@
                 <h5>Farpgram</h5>
             </div>
             <div class="row">
-              <a class="link" href="home.php"><h4>Home</h4></a>
+              <a class="link" href="home.php"><h4 class="text-xl-start">Home</h4></a>
             </div>
             <div class="row">
               <a class="link" data-bs-toggle="collapse" href="#barra-ricerca" role="button" aria-expanded="false" aria-controls="barra-ricerca">
                 <h4>Cerca</h4>
               </a>
               <div class="collapse" id="barra-ricerca">
-                <div class="card card-body text-bg-dark" id="card">
-                  <input type="text" name="account" class="form-control rounded-pill text-bg-dark" id="txtSearch" placeholder="Cerca">
-                  <!-- <ul class="list-group list-group-flush" id="list-searchAccounts"></ul> -->
-                    <!-- <li class="list-group-item text-bg-dark"><a href="#" class="link"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><span class="white">  username</span></a></li>
+                <div class="card card-body text-bg-dark">
+                  <input type="text" name="account" class="form-control rounded-pill text-bg-dark" placeholder="Cerca">
+                  <!-- <ul class="list-group list-group-flush" id="searchAccounts"></ul>
                     <li class="list-group-item text-bg-dark"><a href="#" class="link"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><span class="white">  username</span></a></li>
-                    <li class="list-group-item text-bg-dark"><a href="#" class="link"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><span class="white">  username</span></a></li> -->
-                  </ul>
+                    <div class="bottom-border"></div>
+                    <li class="list-group-item text-bg-dark"><a href="#" class="link"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><span class="white">  username</span></a></li>
+                    <div class="bottom-border"></div>
+                    <li class="list-group-item text-bg-dark"><a href="#" class="link"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><span class="white">  username</span></a></li>
+                  </ul> -->
                 </div>
               </div>
             </div>
             <div class="row">
-              <a class="link" href="#"><h4>Notifiche</h4></a>
+              <a class="link" href="Notifiche.php"><h4 class="text-xl-start">Notifiche</h4></a>
             </div>
             <div class="row">
-              <a class="link" href="#"><h4>Esplora</h4></a>
+              <a class="link" href="#"><h4 class="text-xl-start">Esplora</h4></a>
             </div>
             <div class="row">
-              <a class="link" href="#"><h4>Profilo</h4></a>
+              <a class="link" href="#"><h4 class="text-xl-start">Profilo</h4></a>
             </div>
             <div class="row">
                 <div class="btn-group dropup position-relative bottom-0 start-50 translate-middle-x">
@@ -71,7 +73,8 @@
           <div class="col-9 " id="post">
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\novb.jpg" class="card-img-top" alt="caricamento in corso">
@@ -81,7 +84,8 @@
             </div>
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
@@ -91,7 +95,8 @@
             </div>
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
@@ -102,12 +107,11 @@
           </div>
           <div class="col-1" id="profilo">
             <aside class="sidebar">
-              <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x" id="profile-image">
+              <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x myprofile-image">
               <p><?php echo $_SESSION['user'] ?></p>
             </aside>
           </div>
         </div>
     </div>
-    <script src="../scripts/searchUser.js"></script>
 </body>
 </html>
