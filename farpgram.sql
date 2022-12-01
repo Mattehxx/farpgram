@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 29, 2022 at 10:42 AM
+-- Generation Time: Dec 01, 2022 at 06:27 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,6 +40,15 @@ CREATE TABLE `accounts` (
   `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `username`, `firstname`, `lastname`, `birthDate`, `bio`, `sex`, `creationTime`, `idImage`, `idUser`) VALUES
+(1, 'Mattehxx', NULL, NULL, NULL, NULL, NULL, '2022-11-16 14:28:21', NULL, 1),
+(2, 'Mattia', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:21', NULL, 2),
+(3, 'Marco', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:35', NULL, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -62,23 +71,10 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `follow` (
   `id` int(11) NOT NULL,
-  `idAccount` int(11) NOT NULL,
-  `idAccountFollowed` int(11) NOT NULL,
+  `idAccount` int(11) DEFAULT '0',
+  `idAccountFollowed` int(11) NOT NULL DEFAULT '0',
   `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `history`
---
-
-CREATE TABLE `history` (
-  `id` int(11) NOT NULL,
-  `idAccount` int(11) NOT NULL,
-  `idSearched` int(11) NOT NULL,
-  `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -100,9 +96,9 @@ CREATE TABLE `images` (
 
 CREATE TABLE `likes` (
   `id` int(11) NOT NULL,
-  `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `idPost` int(11) DEFAULT NULL,
-  `idAccount` int(11) DEFAULT NULL
+  `idAccount` int(11) DEFAULT NULL,
+  `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -130,6 +126,15 @@ CREATE TABLE `users` (
   `email` varchar(60) COLLATE utf8_unicode_520_ci NOT NULL,
   `password` varchar(32) COLLATE utf8_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`) VALUES
+(1, 'teorove04@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
+(2, 'ciao@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
+(3, 'prova@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e');
 
 -- --------------------------------------------------------
 
@@ -173,12 +178,6 @@ ALTER TABLE `follow`
   ADD KEY `idAccountFollowed` (`idAccountFollowed`);
 
 --
--- Indexes for table `history`
---
-ALTER TABLE `history`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -204,7 +203,8 @@ ALTER TABLE `posts`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `videos`
@@ -221,7 +221,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -233,12 +233,6 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `follow`
 --
 ALTER TABLE `follow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `history`
---
-ALTER TABLE `history`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -263,7 +257,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `videos`

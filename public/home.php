@@ -1,3 +1,4 @@
+<!-- Metti username nei tag a e linka il file js saveUsername e metti nome classe accountToSearch a tutti i tag a -->
 <?php 
   session_start();
 ?>
@@ -71,7 +72,8 @@
           <div class="col-9 " id="post">
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\novb.jpg" class="card-img-top" alt="caricamento in corso">
@@ -81,7 +83,8 @@
             </div>
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
@@ -91,7 +94,8 @@
             </div>
             <div class="card text-bg-dark" style="width: 20rem">
               <div class="card-body">
-                <h5 class="card-title">username</h5>
+                <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                <h5 class="card-title d-inline">username</h5>
                 <p class="card-text">luogo</p>
               </div>
               <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
@@ -102,7 +106,7 @@
           </div>
           <div class="col-1" id="profilo">
             <aside class="sidebar">
-              <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x" id="profile-image">
+              <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x myprofile-image">
               <p><?php echo $_SESSION['user'] ?></p>
             </aside>
           </div>

@@ -8,17 +8,17 @@ div.appendChild(ul);
 txt.addEventListener("input", function() {
 
     var request=new XMLHttpRequest();
-    request.open('POST', '../function/searchAccounts.php');
+    request.open('POST', '../function/searchUser.php');
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     var value=txt.value;
     request.send("txtSearch="+value);
     
     request.onload = () => {
-        
+
         var response=JSON.parse(request.responseText);
 
         ul.replaceChildren();
-        response.forEach(element => {
+        response.forEach(element => {   //Mettere username nei tag a
             var li=document.createElement("li");
             li.classList.add("list-group-item");
             li.classList.add("text-bg-dark");
@@ -28,11 +28,15 @@ txt.addEventListener("input", function() {
             a.href="../public/profile.php";
             a.classList.add("link");
             li.appendChild(a);
+            a.addEventListener('click', function() {
+                localStorage.setItem("accountToSearch", element["username"]);
+            });
 
             var img=document.createElement("img");
-            img.src="Images\colorful.PNG";
-            a.classList.add("rounded-circle");
-            a.style.maxWidth="2rem";
+            img.src="../public/Images/colorful.PNG";
+            img.classList.add("rounded-circle");
+            img.classList.add("profile-image");
+            img.style.maxWidth="2rem";
             a.appendChild(img);
 
             var span=document.createElement("span");
