@@ -1,0 +1,24 @@
+h5{
+    padding-left: 5%;
+    font-size: larger;
+    color: white;
+}
+
+.notification{
+    border-bottom: solid;
+    border-color: rgb(43, 43, 43);
+    padding-bottom: 10px;
+    white-space: nowrap;
+}
+
+li{
+    color: rgb(20, 20, 20);
+}
+
+.myprofile-image{
+    max-width: 70px;
+}
+
+.profile-image{
+    max-width: 50px;
+}

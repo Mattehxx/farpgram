@@ -1,0 +1,41 @@
+html{
+  background-color: rgb(20, 20, 20);
+}
+
+.border{
+    border-radius: 20px;
+    min-width: 300px;
+    border-color: rgb(20, 20, 20) !important;
+    background-color: rgb(34, 34, 34) !important;
+}
+
+#input{
+  min-width: 260px;
+}
+
+.form-control{
+  background-color: rgb(34, 34, 34) !important;
+}
+
+a{
+  color: purple;
+}
+
+.text-bg-dark{
+  background-color: rgb(20, 20, 20) !important;
+}
+
+.white{
+  color: white !important;
+}
+
+.btn-outline-primary{
+    --bs-btn-color: purple !important;
+    --bs-btn-border-color: purple !important;
+    --bs-btn-hover-bg: purple !important;
+    --bs-btn-hover-border-color: purple !important;
+    --bs-btn-active-bg: purple !important;
+    --bs-btn-active-border-color: purple !important;
+    --bs-btn-disabled-color: purple !important;
+    --bs-btn-disabled-border-color: purple !important;
+}

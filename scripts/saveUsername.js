@@ -8,3 +8,5 @@ for (let i = 0; i < accountsToSearch.length; i++) {
         localStorage.setItem("lastClicked", key);   //Salvo quale è stata la chiave dell'ultimo account cliccato
     });
   }
+
+  //session storage non funziona, se funziona provare a pulire coockie della cache e vedi che non funziona (in teoria)

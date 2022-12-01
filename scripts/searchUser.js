@@ -13,36 +13,34 @@ txt.addEventListener("input", function() {
     var value=txt.value;
     request.send("txtSearch="+value);
     
-    request.onload = () => {
+    request.onload = () => {    //<li class="list-group-item text-bg-dark"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><a href="profile.php" class="accountToSearch link">Mattia</a></li>
 
         var response=JSON.parse(request.responseText);
 
         ul.replaceChildren();
-        response.forEach(element => {   //Mettere username nei tag a
+        response.forEach(element => {
             var li=document.createElement("li");
             li.classList.add("list-group-item");
             li.classList.add("text-bg-dark");
-            ul.appendChild(li);
-
-            var a=document.createElement("a");
-            a.href="../public/profile.php";
-            a.classList.add("link");
-            li.appendChild(a);
-            a.addEventListener('click', function() {
-                localStorage.setItem("accountToSearch", element["username"]);
-            });
+            ul.appendChild(li);     
 
             var img=document.createElement("img");
             img.src="../public/Images/colorful.PNG";
             img.classList.add("rounded-circle");
             img.classList.add("profile-image");
             img.style.maxWidth="2rem";
-            a.appendChild(img);
+            li.appendChild(img);
 
-            var span=document.createElement("span");
-            span.classList.add("white");
-            span.innerHTML=element["username"];
-            a.appendChild(span);
+            var a=document.createElement("a");
+            a.href="../public/profile.php";
+            a.classList.add("accountToSearch");
+            a.classList.add("link");
+            a.innerHTML=element["username"];
+            li.appendChild(a);
+            a.addEventListener('click', function() {
+                //localStorage.setItem("accountToSearch", element["username"]);
+                //credo questa non vada bene perché non gli mettiamo l'indice come in saveUsername quindi dobbiamo chiamare quello
+            });
 
             var divBorder=document.createElement("div");
             divBorder.classList.add("bottom-border");

@@ -1,41 +1,94 @@
 html{
-  background-color: rgb(20, 20, 20);
+    background-color: rgb(34, 34, 34);
+    overflow-x: hidden;
 }
 
-.border{
-    border-radius: 20px;
-    min-width: 300px;
-    border-color: rgb(20, 20, 20) !important;
-    background-color: rgb(34, 34, 34) !important;
+#inner-container{
+    font-family: 'Poppins', sans-se if;
+    margin-top: 50px;
+    border: solid;
+    border-color: rgb(20, 20, 20);
+    padding: 10px;
+    background-color: rgb(20, 20, 20);
+    margin-bottom: 50px;
 }
 
-#input{
-  min-width: 260px;
+#logo{
+    min-width: 100px;
+    width: 100px;
 }
 
-.form-control{
-  background-color: rgb(34, 34, 34) !important;
+
+/* barra delle funzioni */
+#functions{
+    border-right: solid;
+    border-color: rgb(43, 43, 43);
+    padding-left: 5%;
 }
 
-a{
-  color: purple;
+#barra-ricerca{
+    background-color: rgb(20, 20, 20) !important;
+    border-color: white  !important;
 }
 
-.text-bg-dark{
-  background-color: rgb(20, 20, 20) !important;
+#btn-altro{
+    background-color: purple;
+    max-width: 100px;
+}
+
+.dropup{
+    margin-top: 50px !important;
+}
+
+h4{
+    padding-top: 40px;
+    color: white;
+    font-size: larger;
+}
+
+
+/* immagini profilo */
+#profilo{
+    margin-right: 0px;
+    border-left: solid;
+    border-color: rgb(43, 43, 43);
+    color: white;
+}
+
+/* utilities */
+.sidebar{
+    position: sticky;
+    top: 2rem;
 }
 
 .white{
-  color: white !important;
+    color: white;
 }
 
-.btn-outline-primary{
-    --bs-btn-color: purple !important;
-    --bs-btn-border-color: purple !important;
-    --bs-btn-hover-bg: purple !important;
-    --bs-btn-hover-border-color: purple !important;
-    --bs-btn-active-bg: purple !important;
-    --bs-btn-active-border-color: purple !important;
-    --bs-btn-disabled-color: purple !important;
-    --bs-btn-disabled-border-color: purple !important;
+.grey{
+    color: rgb(77, 77, 77);
+    font-size: smaller;
+}
+
+.bottom-border{
+    border-bottom: solid;
+    border-color: rgb(20, 20, 20);
+    padding: 3px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    color: purple;
+}
+
+.myprofile-image{
+    max-width: 70px;
+}
+
+.profile-image{
+    max-width: 35px;
 }
