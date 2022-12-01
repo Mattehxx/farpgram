@@ -1,32 +1,10 @@
-html{
-  background-color: rgb(20, 20, 20);
-}
-
 .border{
     border-radius: 20px;
     min-width: 300px;
-    border-color: rgb(20, 20, 20) !important;
-    background-color: rgb(34, 34, 34) !important;
 }
 
 #input{
   min-width: 260px;
-}
-
-.form-control{
-  background-color: rgb(34, 34, 34) !important;
-}
-
-a{
-  color: purple;
-}
-
-.text-bg-dark{
-  background-color: rgb(20, 20, 20) !important;
-}
-
-.white{
-  color: white !important;
 }
 
 .btn-outline-primary{

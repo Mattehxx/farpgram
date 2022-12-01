@@ -29,7 +29,7 @@
                 session_start();
                 $_SESSION['user']=$username;
                 if(isset($_SESSION['user'])) {
-                    header("Location:../public/home.html");
+                    header("Location:../public/home.php");
                 }
             }else{
                 echo "Spiacente la password inserita è errata";
