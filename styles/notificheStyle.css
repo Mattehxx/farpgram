@@ -17,6 +17,12 @@ html{
     width: 100px;
 }
 
+h5{
+    padding-left: 5%;
+    font-size: larger;
+    color: white;
+}
+
 
 /* barra delle funzioni */
 #funzioni{
@@ -54,24 +60,17 @@ h4:hover{
 }
 
 
-/* post */
-.card{
-    margin-top: 10px;
-    width: 20rem;
-    margin-left: 32%;
-} 
-
-.card-title{
-    color: white;
-    padding-left: 0px;
+/* notifiche */
+.notification{
+    border-bottom: solid;
+    border-color: rgb(43, 43, 43);
+    padding-bottom: 10px;
+    white-space: nowrap;
 }
 
-h5{
-    padding-left: 5%;
-    font-size: larger;
-    color: white;
+li{
+    color: rgb(20, 20, 20);
 }
-
 
 /* immagini profilo */
 #profilo{
@@ -81,13 +80,10 @@ h5{
     color: white;
 }
 
-.myprofile-image{
+.profile-image{
     max-width: 70px;
 }
 
-.profile-image{
-    max-width: 35px;
-}
 
 /* utilities */
 .sidebar{
@@ -97,6 +93,10 @@ h5{
 
 .white{
     color: white;
+}
+
+.grey{
+    color: rgb(59, 59, 59);
 }
 
 .bottom-border{
