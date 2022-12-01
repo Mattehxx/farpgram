@@ -10,12 +10,17 @@ html{
     border-color: rgb(20, 20, 20);
     padding: 10px;
     background-color: rgb(20, 20, 20);
-    margin-bottom: 50px;
 }
 
 #logo{
     min-width: 100px;
     width: 100px;
+}
+
+h5{
+    padding-left: 5%;
+    font-size: larger;
+    color: white;
 }
 
 
@@ -55,23 +60,8 @@ h4:hover{
 }
 
 
-/* post */
-.card{
-    margin-top: 10px;
-    width: 20rem;
-    margin-left: 32%;
-} 
+/* profilo */
 
-.card-title{
-    color: white;
-    padding-left: 0px;
-}
-
-h5{
-    padding-left: 5%;
-    font-size: larger;
-    color: white;
-}
 
 
 /* immagini profilo */
@@ -82,13 +72,10 @@ h5{
     color: white;
 }
 
-.myprofile-image{
+.profile-image{
     max-width: 70px;
 }
 
-.profile-image{
-    max-width: 35px;
-}
 
 /* utilities */
 .sidebar{
@@ -98,6 +85,10 @@ h5{
 
 .white{
     color: white;
+}
+
+.grey{
+    color: rgb(59, 59, 59);
 }
 
 .bottom-border{
