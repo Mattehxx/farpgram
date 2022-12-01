@@ -70,18 +70,4 @@
         }
         $conn->close();
     }
-
-    function searchAccount($text) {
-        global $conn;
-        
-        $accounts=array();
-        $sql="SELECT * FROM accounts WHERE username LIKE '$text%'";
-        $result=$conn->query($sql);
-        if($result->num_rows>0) {
-            while ($row=$result->fetch_assoc()) {
-                $accounts[]=$row;
-            }
-        }
-        return json_encode($accounts);
-    }
 ?>
