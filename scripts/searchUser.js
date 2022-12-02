@@ -38,8 +38,9 @@ txt.addEventListener("input", function() {
             a.innerHTML=element["username"];
             li.appendChild(a);
             a.addEventListener('click', function() {
-                //localStorage.setItem("accountToSearch", element["username"]);
-                //credo questa non vada bene perché non gli mettiamo l'indice come in saveUsername quindi dobbiamo chiamare quello
+                sessionStorage.setItem("accountToSearch", element["username"]);
+                var key="accountToSearch";
+                sessionStorage.setItem("lastClicked", key);
             });
 
             var divBorder=document.createElement("div");
