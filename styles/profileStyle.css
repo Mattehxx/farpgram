@@ -1,0 +1,44 @@
+.myprofile-image{
+    max-width: 200px !important;
+    margin-bottom: 5%;
+}
+
+.bottom-border{
+    border-color: rgb(43, 43, 43) !important;
+}
+
+#posts{
+    margin-top: 5%;
+}
+
+.post{
+    max-width: 13rem;
+    margin-right: 5rem;
+}
+
+.txt{
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-outline-primary{
+    --bs-btn-color: purple !important;
+    --bs-btn-border-color: purple !important;
+    --bs-btn-hover-bg: purple !important;
+    --bs-btn-hover-border-color: purple !important;
+    --bs-btn-active-bg: purple !important;
+    --bs-btn-active-border-color: purple !important;
+    --bs-btn-disabled-color: purple !important;
+    --bs-btn-disabled-border-color: purple !important;
+}
+
+.btn-primary{
+    --bs-btn-bg: purple !important;
+    --bs-btn-border-color: purple !important;
+    --bs-btn-hover-bg: purple !important;
+    --bs-btn-hover-border-color: purple !important;
+    --bs-btn-active-bg: purple !important;
+    --bs-btn-active-border-color: purple !important;
+    --bs-btn-disabled-bg: purple !important;
+    --bs-btn-disabled-border-color: purple !important;
+}

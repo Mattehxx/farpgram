@@ -13,9 +13,13 @@ html{
     margin-bottom: 50px;
 }
 
-#logo{
+#img-logo{
     min-width: 100px;
     width: 100px;
+}
+
+#logo{
+    margin-bottom: 30%;
 }
 
 
