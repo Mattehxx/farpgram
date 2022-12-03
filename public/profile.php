@@ -73,13 +73,13 @@
                     <img src="Images\colorful.PNG" class="rounded-circle myprofile-image">
                 </div>
                 <div class="col-2 mt-5">
-                    <p class="txt fs-3"><span id="nome"></span></p>
+                    <p class="txt fs-3"><span id="username"></span></p>
                     <p class="txt fs-5">nome e cognome</p>
                     <p class="txt d-inline fs-5">follower: 333</p> <h6 class="d-inline white fs-5">seguiti: 333</h6>
                     
                 </div>
-                <div class="col-1">
-                    <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button>
+                <div class="col-1" id="btnDiv">
+                    <!-- <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button> -->
                 </div>
                 <div class="col-3">
 
@@ -105,5 +105,6 @@
     <script src="../scripts/searchUser.js"></script>
     <script src="../scripts/saveUsername.js"></script>
     <script src="../scripts/getUsername.js"></script>
+    <script src="../scripts/follow.js"></script>
 </body>
 </html>
