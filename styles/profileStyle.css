@@ -32,6 +32,9 @@
 .marginStats{
     margin-top: 3%;
 }
+.margin-bio{
+    margin-top: 20%;
+}
 
 .btn-outline-primary{
     --bs-btn-color: purple !important;
