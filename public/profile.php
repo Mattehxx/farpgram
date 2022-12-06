@@ -79,8 +79,6 @@
                             <!-- <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button> -->
                         </div>
                     </div>
-                    
-                    
                     <div class="row margin-stats">
                         <div class="col-2">
                             <p class="txt d-inline fs-5">Post: 333</p>
@@ -89,16 +87,18 @@
                             <p class="txt d-inline fs-5">Follower: 333</p>
                         </div>
                         <div class="col-2 margin-int">
-                            <p class="d-inline white fs-5">Seguiti: 333</p>
+                            <p class="txt d-inline fs-5">Seguiti: 333</p>
                         </div>
                     </div>
-                    
+                    <div class="row mt-2">
+                        <div class="col-8">
+                            <p class="txt d-inline fs-5 text-break" id="bio">Sono frocio, ho fatto grr pow a barack obama, supporto lgbt ma odio i negri</p>
+                        </div>
+                    </div>
                 </div>
+                <!-- <div class="col-3">
 
-               
-                <div class="col-3">
-
-                </div>
+                </div> -->
             </div>
             <div class="left-margin">
                 <div class="row" id="posts">
@@ -120,7 +120,9 @@
         <div class="col-1" id="profilo">
             <aside class="sidebar">
                 <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x myprofile-image">
-                <p><?php echo $_SESSION['user'] ?></p>
+                <center>
+                    <p class=""><?php echo $_SESSION['user'] ?></p>
+                </center>
             </aside>
         </div>
             
