@@ -1,4 +1,4 @@
-.myprofile-image{
+.profile-image{
     max-width: 200px !important;
     margin-bottom: 5%;
 }
@@ -19,6 +19,18 @@
 .txt{
     color: white;
     margin-top: 10px;
+}
+
+.left-margin{
+    margin-left: 10%;
+}
+
+.margin-int{
+    margin-left: 5%;
+}
+
+.marginStats{
+    margin-top: 3%;
 }
 
 .btn-outline-primary{

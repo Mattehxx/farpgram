@@ -23,8 +23,8 @@
         <div class="row">
         <div class="col-2 position-relative top-0 start-0 sticky-top" id="functions">
           <aside class="sidebar">
-            <div class="row">
-                <img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="logo" onclick="this.src='Images/colorful.PNG'">
+            <div class="row" id="logo">
+                <img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/colorful.PNG'">
                 <h5>Farpgram</h5>
             </div>
             <div class="row">
