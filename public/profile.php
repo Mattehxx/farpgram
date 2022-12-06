@@ -19,7 +19,7 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-      <div class="container-fluid" id="inner-container">
+    <div class="container-fluid" id="inner-container">
         <div class="row">
           <div class="col-2 position-relative top-0 start-0 sticky-top" id="functions">
             <aside class="sidebar">
@@ -64,44 +64,67 @@
                 </div>
             </aside>
         </div>
-        <div class="col-10">
-            <div class="row bottom-border" id="descrizione">
-                <div class="col-4">
-
+        <div class="col-9">
+            <div class="row bottom-border m-1" id="descrizione">
+                <div class="col-2 left-margin">
+                    <img src="Images\colorful.PNG" class="rounded-circle profile-image">
                 </div>
-                <div class="col-2">
-                    <img src="Images\colorful.PNG" class="rounded-circle myprofile-image">
-                </div>
-                <div class="col-2 mt-5">
+                <div class="col-5 mt-5 left-margin">
                     <p class="txt fs-3"><span id="username"></span></p>
-                    <p class="txt fs-5">nome e cognome</p>
-                    <p class="txt d-inline fs-5">follower: 333</p> <h6 class="d-inline white fs-5">seguiti: 333</h6>
+                    <div class="row">
+                        <div class="col">
+                            <p class="txt fs-5">nome e cognome</p>
+                        </div>
+                        <div class="col" id="btnDiv">
+                            <!-- <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button> -->
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row margin-stats">
+                        <div class="col-2">
+                            <p class="txt d-inline fs-5">Post: 333</p>
+                        </div>
+                        <div class="col-2">
+                            <p class="txt d-inline fs-5">Follower: 333</p>
+                        </div>
+                        <div class="col-2 margin-int">
+                            <p class="d-inline white fs-5">Seguiti: 333</p>
+                        </div>
+                    </div>
                     
                 </div>
-                <div class="col-1" id="btnDiv">
-                    <!-- <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button> -->
-                </div>
+
+               
                 <div class="col-3">
 
                 </div>
             </div>
-            <div class="row" id="posts">
-                <ul>
-                    <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                </ul>               
-            </div>
-            <div class="row" id="posts">
-                <ul>
-                    <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
-                    <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
-                </ul>               
+            <div class="left-margin">
+                <div class="row" id="posts">
+                    <ul>
+                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
+                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
+                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
+                    </ul>               
+                </div>
+                <div class="row" id="posts">
+                    <ul>
+                        <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
+                        <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
+                        <li class="d-inline"><a href="post.php"><img src="Images\novb.jpg" class="post"></a></li>
+                    </ul>               
+                </div>
             </div>
         </div>
+        <div class="col-1" id="profilo">
+            <aside class="sidebar">
+                <img src="Images\colorful.PNG" alt="" class="rounded-circle position-relative top-0 start-50 translate-middle-x myprofile-image">
+                <p><?php echo $_SESSION['user'] ?></p>
+            </aside>
+        </div>
+            
+    </div>
     <script src="../scripts/searchUser.js"></script>
     <script src="../scripts/saveUsername.js"></script>
     <script src="../scripts/getUsername.js"></script>
