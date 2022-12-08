@@ -1,14 +1,6 @@
-.profile-image{
+.profile-img{
     max-width: 200px !important;
     margin-bottom: 5%;
-}
-
-.bottom-border{
-    border-color: rgb(43, 43, 43) !important;
-}
-
-#posts{
-    margin-top: 5%;
 }
 
 .post{

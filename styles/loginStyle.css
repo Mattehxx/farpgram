@@ -39,3 +39,9 @@ a{
     --bs-btn-disabled-color: purple !important;
     --bs-btn-disabled-border-color: purple !important;
 }
+
+@media(max-width: 767px){
+  html{
+    background-color: white;
+  }
+}

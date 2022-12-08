@@ -1,16 +1,102 @@
-.card{
-    margin-top: 10px;
-    width: 20rem;
-    margin-left: 32%;
-} 
-
-.card-title{
-    color: white;
-    padding-left: 0px;
+html{
+    overflow: hidden;
 }
 
-h5{
-    padding-left: 5%;
-    font-size: larger;
+body{
+    background-color: rgb(26, 25, 25);
+    font-family: 'Poppins';
+}
+
+/* NAVBAR */
+.navbar{
+    background-color:  rgb(26, 25, 25);
+}    
+
+.profile-image{
+    max-width: 35px;
+}
+
+#img-logo{
+    min-width: 100px;
+    width: 100px;
+}
+
+#logo{
+    margin-bottom: 30%;
+}
+
+/* SIDE NAVBAR */
+#side-nav{
+    max-width: 300px; 
+    min-width: 300px; 
+    background-color: black;
+}
+
+#functions{
+    padding: 0px !important;
+}
+
+.function{
+    list-style: none;
+    padding-top: 20%;
+    font-size: 20px;
+}
+
+.function:hover{
+    color: purple;
+}
+
+.btn-primary{
+    --bs-btn-bg: purple !important;
+    --bs-btn-border-color: purple !important;
+    --bs-btn-hover-bg: purple !important;
+    --bs-btn-hover-border-color: purple !important;
+    --bs-btn-active-bg: purple !important;
+    --bs-btn-active-border-color: purple !important;
+    --bs-btn-disabled-bg: purple !important;
+    --bs-btn-disabled-border-color: purple !important;
+    max-width: 100px;
+}
+
+/* UTILITIES */
+.main-container{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.no-overflow{
+    position: sticky;
+    top: 2rem;
+    overflow: hidden;
+}
+
+.link{
     color: white;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: purple;
+} 
+
+#content{
+    height: 100vh;
+    overflow: auto;
+}
+
+.grey{
+    color: grey;
+    font-size: 13px;
+}
+
+.bottom-border{
+    border-bottom: solid;
+    border-color: rgb(0, 0, 0);
+    margin-right: 10%;
+}
+
+@media (max-width: 769px) {
+    .username{
+        display: none;
+    }
 }

@@ -15,7 +15,6 @@
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="../styles/homeStyle.css">
-  <link rel="stylesheet" href="../styles/profileStyle.css">
   <script src="https://kit.fontawesome.com/e4f4aab979.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -50,7 +49,7 @@
     <div class="col-10">
       <div class="main-container">
 
-      <!-- NAVBAR -->
+        <!-- NAVBAR -->
         <aside class="no-overflow">     
           <nav class="navbar">
             <div class="container-fluid">
@@ -63,53 +62,35 @@
             </div>
           </nav>
         </aside>
-
-        <div class="row bottom-border m-1 mt-5 me-5" id="descrizione">
-                <div class="col-2 left-margin">
-                    <img src="Images\colorful.PNG" class="rounded-circle profile-img">
+            <div class="text-center">
+              <div class="text-start card text-bg-dark mb-3 d-inline-flex" style="width: 25rem">
+                <div class="card-body">
+                  <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image">
+                  <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattehxx</a> </h5>
+                  <p class="card-text">luogo</p>
                 </div>
-                <div class="col-5 mt-5 left-margin">
-                    <p class="txt fs-3"><?php echo $_SESSION['user']?></span></p>
-                    <div class="row">
-                        <div class="col">
-                            <p class="txt fs-5">nome e cognome</p>
-                        </div>
-                        <div class="col" id="btnModProfile">
-                            <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Modifica</button>
-                        </div>
-                    </div>
-                    <div class="row margin-stats">
-                        <div class="col-2">
-                            <p class="txt d-inline fs-5">Post : 333</p>
-                        </div>
-                        <div class="col-2">
-                            <p class="txt d-inline fs-5">Follower: 333</p>
-                        </div>
-                        <div class="col-2 margin-int">
-                            <p class="txt d-inline fs-5">Seguiti : 333</p>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-8">
-                            <p class="txt d-inline fs-5 text-break" id="bio">wowowowowowowowowowowowowowowowowowowowow</p>
-                        </div>
-                    </div> 
+                <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
+                <div class="card-body">
+                  <p class="card-text">isisbernocchi</p>
+                  <p class="grey"> 01/12/2022</p>
+                </div>              
+              </div>
+              <div class="text-start card text-bg-dark mb-3 d-inline-flex" style="width: 25rem">
+              <div class="card-body comments">
+                  <h3 class="text-center">COMMENTI</h3>
+                  <hr class="border-black">
+                </div>
+                <div class="overflow-auto" style="max-height: 200px">
+                  <ul style="list-style: none">
+                    <li> <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image"> <a href="profile.php" class="accountToSearch text-decoration-none link">Marco</a> : <span class="comment-text text-break" > il mio commento </span> </li>
+                    <li> <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattehxx</a> : <span class="comment-text text-break" > il mio commento </span> </li>
+                    <li> <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattia</a> : <span class="comment-text text-break" > il mio commento </span> </li>
+                    <li> <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattia</a> : <span class="comment-text text-break" > il mio commento </span> </li>
+                    <li> <img src="Images\colorful.PNG" class="d-inline rounded-circle profile-image"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattia</a> : <span class="comment-text text-break" > il mio commento </span> </li>
+                  </ul>
                 </div>
             </div>
-            <div class="left-margin overflow-auto" id="content">
-                <div class="row mt-3">
-                    <ul>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                        <hr>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                        <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post"></a></li>
-                    </ul>               
-                </div>
-            </div>
-      </div>
+        </aside>
     </div>
   </div>
 
@@ -142,8 +123,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
-    <script src="../scripts/saveUsername.js"></script>
-    <script src="../scripts/getUsername.js"></script>
-    <script src="../scripts/follow.js"></script>
+  <script src="../scripts/saveUsername.js"></script>
 </body>
 </html>
