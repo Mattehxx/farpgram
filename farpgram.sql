@@ -2,8 +2,8 @@
 -- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 01, 2022 at 06:27 PM
+-- Host: localhost:3303
+-- Generation Time: Dec 09, 2022 at 02:40 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -35,8 +35,7 @@ CREATE TABLE `accounts` (
   `birthDate` date DEFAULT NULL,
   `bio` varchar(200) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `sex` enum('Uomo','Donna','Altro','') COLLATE utf8_unicode_520_ci DEFAULT NULL,
-  `creationTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `idImage` int(11) DEFAULT NULL,
+  `actionTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
@@ -44,10 +43,10 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `username`, `firstname`, `lastname`, `birthDate`, `bio`, `sex`, `creationTime`, `idImage`, `idUser`) VALUES
-(1, 'Mattehxx', NULL, NULL, NULL, NULL, NULL, '2022-11-16 14:28:21', NULL, 1),
-(2, 'Mattia', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:21', NULL, 2),
-(3, 'Marco', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:35', NULL, 3);
+INSERT INTO `accounts` (`id`, `username`, `firstname`, `lastname`, `birthDate`, `bio`, `sex`, `actionTime`, `idUser`) VALUES
+(1, 'Mattehxx', NULL, NULL, NULL, NULL, NULL, '2022-11-16 14:28:21', 1),
+(2, 'Mattia', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:21', 2),
+(3, 'Marco', NULL, NULL, NULL, NULL, NULL, '2022-11-29 22:56:35', 3);
 
 -- --------------------------------------------------------
 
@@ -79,10 +78,10 @@ CREATE TABLE `follow` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Table structure for table `imagevideos`
 --
 
-CREATE TABLE `images` (
+CREATE TABLE `imagevideos` (
   `id` int(11) NOT NULL,
   `url` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
   `idPost` int(11) DEFAULT NULL
@@ -110,7 +109,8 @@ CREATE TABLE `likes` (
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `body` varchar(500) CHARACTER SET ucs2 COLLATE ucs2_unicode_520_ci DEFAULT NULL,
-  `location` varchar(100) CHARACTER SET ucs2 COLLATE ucs2_unicode_520_ci DEFAULT NULL,
+  `lat` double DEFAULT NULL,
+  `lon` double DEFAULT NULL,
   `actionTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `idAccount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
@@ -136,18 +136,6 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (2, 'ciao@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
 (3, 'prova@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `videos`
---
-
-CREATE TABLE `videos` (
-  `id` int(11) NOT NULL,
-  `url` varchar(100) COLLATE utf8_unicode_520_ci DEFAULT NULL,
-  `idPost` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -158,8 +146,7 @@ CREATE TABLE `videos` (
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `idUser` (`idUser`),
-  ADD KEY `idImage` (`idImage`);
+  ADD KEY `idUser` (`idUser`);
 
 --
 -- Indexes for table `comments`
@@ -178,9 +165,9 @@ ALTER TABLE `follow`
   ADD KEY `idAccountFollowed` (`idAccountFollowed`);
 
 --
--- Indexes for table `images`
+-- Indexes for table `imagevideos`
 --
-ALTER TABLE `images`
+ALTER TABLE `imagevideos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idPost` (`idPost`);
 
@@ -207,13 +194,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `videos`
---
-ALTER TABLE `videos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idPost` (`idPost`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -236,9 +216,9 @@ ALTER TABLE `follow`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT for table `imagevideos`
 --
-ALTER TABLE `images`
+ALTER TABLE `imagevideos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -260,12 +240,6 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `videos`
---
-ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Constraints for dumped tables
 --
 
@@ -273,8 +247,7 @@ ALTER TABLE `videos`
 -- Constraints for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `accounts_ibfk_2` FOREIGN KEY (`idImage`) REFERENCES `images` (`id`);
+  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `comments`
@@ -291,10 +264,10 @@ ALTER TABLE `follow`
   ADD CONSTRAINT `follow_ibfk_2` FOREIGN KEY (`idAccountFollowed`) REFERENCES `accounts` (`id`);
 
 --
--- Constraints for table `images`
+-- Constraints for table `imagevideos`
 --
-ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`idPost`) REFERENCES `posts` (`id`);
+ALTER TABLE `imagevideos`
+  ADD CONSTRAINT `imagevideos_ibfk_1` FOREIGN KEY (`idPost`) REFERENCES `posts` (`id`);
 
 --
 -- Constraints for table `likes`
@@ -308,12 +281,6 @@ ALTER TABLE `likes`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`idAccount`) REFERENCES `accounts` (`id`);
-
---
--- Constraints for table `videos`
---
-ALTER TABLE `videos`
-  ADD CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`idPost`) REFERENCES `posts` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
