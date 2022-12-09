@@ -82,6 +82,18 @@
                 $accounts[]=$row;
             }
         }
+        $conn->close();
+
         return json_encode($accounts);
+    }
+
+    function getIdUser($username) {
+        global $conn;
+        
+        $sql="SELECT idUser FROM accounts WHERE username='$username'";
+        $result=$conn->query($sql);
+        $row=$result->fetch_assoc();
+
+        return $row['idUser'];
     }
 ?>

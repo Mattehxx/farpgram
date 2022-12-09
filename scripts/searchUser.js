@@ -1,4 +1,4 @@
-var div=document.getElementById("oc-body");
+var div=document.getElementById("card");
 var txt=document.getElementById("txtSearch");
 var ul=document.createElement("ul");
 ul.classList.add("list-group");
@@ -27,7 +27,7 @@ txt.addEventListener("input", function() {
             var img=document.createElement("img");
             img.src="../public/Images/colorful.PNG";
             img.classList.add("rounded-circle");
-            img.classList.add("me-2");
+            img.classList.add("profile-image");
             img.style.maxWidth="2rem";
             li.appendChild(img);
 
