@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3303
--- Generation Time: Dec 09, 2022 at 09:03 PM
+-- Generation Time: Dec 09, 2022 at 10:08 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -74,6 +74,18 @@ CREATE TABLE `follow` (
   `idAccountFollowed` int(11) NOT NULL DEFAULT '0',
   `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `ID` int(11) NOT NULL,
+  `IdAccount` int(11) NOT NULL,
+  `IdAccountResearched` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -164,6 +176,14 @@ ALTER TABLE `follow`
   ADD KEY `idAccountFollowed` (`idAccountFollowed`);
 
 --
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `history_ibfk_1` (`IdAccount`),
+  ADD KEY `history_ibfk_2` (`IdAccountResearched`);
+
+--
 -- Indexes for table `imagevideos`
 --
 ALTER TABLE `imagevideos`
@@ -215,6 +235,12 @@ ALTER TABLE `follow`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `history`
+--
+ALTER TABLE `history`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `imagevideos`
 --
 ALTER TABLE `imagevideos`
@@ -261,6 +287,13 @@ ALTER TABLE `comments`
 ALTER TABLE `follow`
   ADD CONSTRAINT `follow_ibfk_1` FOREIGN KEY (`idAccount`) REFERENCES `accounts` (`id`),
   ADD CONSTRAINT `follow_ibfk_2` FOREIGN KEY (`idAccountFollowed`) REFERENCES `accounts` (`id`);
+
+--
+-- Constraints for table `history`
+--
+ALTER TABLE `history`
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`IdAccount`) REFERENCES `accounts` (`id`),
+  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`IdAccountResearched`) REFERENCES `accounts` (`id`);
 
 --
 -- Constraints for table `imagevideos`
