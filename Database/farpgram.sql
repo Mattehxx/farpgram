@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3303
--- Generation Time: Dec 09, 2022 at 02:40 PM
+-- Generation Time: Dec 09, 2022 at 09:03 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -109,8 +109,7 @@ CREATE TABLE `likes` (
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `body` varchar(500) CHARACTER SET ucs2 COLLATE ucs2_unicode_520_ci DEFAULT NULL,
-  `lat` double DEFAULT NULL,
-  `lon` double DEFAULT NULL,
+  `Location` varchar(100) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `actionTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `idAccount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
