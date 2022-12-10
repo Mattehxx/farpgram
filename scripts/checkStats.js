@@ -11,6 +11,7 @@ requestStats.send("username="+username);
 
 requestStats.onload = () => {
     let response=JSON.parse(requestStats.responseText);
-    follower.innerHTML="Seguaci: "+response['follower'];
-    following.innerHTML="Seguiti: "+response['following'];
+    post.innerHTML="Post <br>"+response['post'];
+    follower.innerHTML="Seguaci <br>"+response['follower'];
+    following.innerHTML="Seguiti <br>"+response['following'];
 }

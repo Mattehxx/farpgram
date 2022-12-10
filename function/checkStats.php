@@ -8,6 +8,11 @@
     $row=$result->fetch_assoc();
     $myIdUser=$row['idUser'];
 
+    $sql="SELECT COUNT(*) AS post FROM posts WHERE idAccount='$myIdUser'"; //Prendo il numero di post dell'account di cui voglio vedere il profilo
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+    $post=$row['post'];
+
     $sql="SELECT COUNT(*) AS follower FROM follow WHERE idAccountFollowed='$myIdUser'"; //Prendo il numero di follower dell'account di cui voglio vedere il profilo
     $result=$conn->query($sql);
     $row=$result->fetch_assoc();
@@ -18,6 +23,7 @@
     $row=$result->fetch_assoc();
     $following=$row['following'];
 
+    $jsonString['post']=$post;    //Aggiungo il numero di post all'array
     $jsonString['follower']=$follower;  //Aggiungo il numero di follower all'array
     $jsonString['following']=$following;    //Aggiungo il numero di seguiti all'array
      
