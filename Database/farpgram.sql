@@ -2,8 +2,8 @@
 -- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3303
--- Generation Time: Dec 09, 2022 at 10:08 PM
+-- Host: localhost:3306
+-- Generation Time: Dec 10, 2022 at 01:19 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -82,9 +82,9 @@ CREATE TABLE `follow` (
 --
 
 CREATE TABLE `history` (
-  `ID` int(11) NOT NULL,
-  `IdAccount` int(11) NOT NULL,
-  `IdAccountResearched` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `idAccount` int(11) NOT NULL,
+  `idAccountResearched` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -98,6 +98,13 @@ CREATE TABLE `imagevideos` (
   `url` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
   `idPost` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `imagevideos`
+--
+
+INSERT INTO `imagevideos` (`id`, `url`, `idPost`) VALUES
+(1, 'uploads/Passage.png', 1);
 
 -- --------------------------------------------------------
 
@@ -121,10 +128,17 @@ CREATE TABLE `likes` (
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `body` varchar(500) CHARACTER SET ucs2 COLLATE ucs2_unicode_520_ci DEFAULT NULL,
-  `Location` varchar(100) COLLATE utf8_unicode_520_ci DEFAULT NULL,
+  `location` varchar(100) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `actionTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `idAccount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `body`, `location`, `actionTime`, `idAccount`) VALUES
+(1, 'Ao bella!', '20025 Legnano MI, Italia', '2022-12-10 13:19:14', 1);
 
 -- --------------------------------------------------------
 
@@ -179,9 +193,9 @@ ALTER TABLE `follow`
 -- Indexes for table `history`
 --
 ALTER TABLE `history`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `history_ibfk_1` (`IdAccount`),
-  ADD KEY `history_ibfk_2` (`IdAccountResearched`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `history_ibfk_1` (`idAccount`),
+  ADD KEY `history_ibfk_2` (`idAccountResearched`);
 
 --
 -- Indexes for table `imagevideos`
@@ -238,13 +252,13 @@ ALTER TABLE `follow`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `imagevideos`
 --
 ALTER TABLE `imagevideos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `likes`
@@ -256,7 +270,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -292,8 +306,8 @@ ALTER TABLE `follow`
 -- Constraints for table `history`
 --
 ALTER TABLE `history`
-  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`IdAccount`) REFERENCES `accounts` (`id`),
-  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`IdAccountResearched`) REFERENCES `accounts` (`id`);
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`idAccount`) REFERENCES `accounts` (`id`),
+  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`idAccountResearched`) REFERENCES `accounts` (`id`);
 
 --
 -- Constraints for table `imagevideos`
