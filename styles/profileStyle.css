@@ -4,25 +4,26 @@
 }
 
 .post{
-    max-width: 13rem;
-    margin-right: 5rem;
+    max-width: 15rem;
+    margin-left: 15%;
 }
 
-.txt{
-    color: white;
-    margin-top: 10px;
+.post:hover{
+    position: relative;
+    top: -4px;
+    transition: all 0.5;
 }
 
-.left-margin{
-    margin-left: 10%;
+.border-b{
+    border-bottom: solid;
+    border-color: rgb(0, 0, 0);
+    margin-right: 8% !important;
+    margin-left: 8% !important;
 }
 
-.margin-int{
-    margin-left: 5%;
-}
-
-.marginStats{
-    margin-top: 3%;
+form textarea{
+    border-radius: 10px;
+    border-color: rgb(206, 206, 206);
 }
 
 .btn-outline-primary{

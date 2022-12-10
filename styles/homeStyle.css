@@ -26,10 +26,12 @@ body{
 }
 
 /* SIDE NAVBAR */
-#side-nav{
-    max-width: 300px; 
-    min-width: 300px; 
+.side-nav{
+    width: 25%;
+    max-width: 300px;
+    min-width: 230px;
     background-color: black;
+    display: inline-block;
 }
 
 #functions{
@@ -92,7 +94,6 @@ body{
 .bottom-border{
     border-bottom: solid;
     border-color: rgb(0, 0, 0);
-    margin-right: 10%;
 }
 
 @media (max-width: 769px) {

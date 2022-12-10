@@ -12,7 +12,8 @@ h5{
 }
 
 li{
-    color: rgb(20, 20, 20);
+    /* color: rgb(20, 20, 20); */
+    color: red;
 }
 
 .myprofile-image{

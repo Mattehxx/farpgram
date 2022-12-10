@@ -19,10 +19,10 @@
 </head>
 <body>
   <div class="row">
-    <div class="col-2 d-block">
-      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
+    <div class="col-2">
+      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4 side-nav">
         <div class="header-sidebar">
-          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/colorful.PNG'"></span><span class="text-white">Farpgram</span></h1>
+          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>
         </div>
         <ul id="functions">
           <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span> <a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
@@ -56,8 +56,8 @@
               <div class="d-flex justify-content-end">
                 </div>
                 <a class="navbar-brand" href="myprofile.php">
-                  <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                   <img src="Images\Icons\Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
+                  <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
           </nav>
@@ -72,10 +72,10 @@
                 <p class="card-text">luogo</p>
               </div>
               <!-- BODY -->
-              <img src="Images\novb.jpg" class="card-img-top" alt="caricamento in corso">
-              <div class="card-body">
-                <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                <a href="#"><i class="fa-regular fa-comment text-white"></i></a>
+              <a href="post.php"><img src="Images\novb.jpg" class="card-img-top" alt="caricamento in corso"></a>
+                   <div class="card-body">
+                <a href="#"><i class="fa-regular fa-heart text-white" onclick="this.class='fa-solid fa-heart text-white'"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
+                <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
                 <p class="card-text">isisbernocchi</p>
                 <p class="grey"> 01/12/2022</p>
               </div>              
@@ -88,10 +88,10 @@
                 <p class="card-text">luogo</p>
               </div>
               <!-- BODY -->
-              <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
+              <a href="post.php"><img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso"></a>
               <div class="card-body">
                 <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                <a href="#"><i class="fa-regular fa-comment text-white"></i></a>
+                <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
                 <p class="card-text">isisbernocchi</p>
                 <p class="grey"> 01/12/2022</p>
               </div>              
@@ -104,10 +104,10 @@
                 <p class="card-text">luogo</p>
               </div>
               <!-- BODY -->
-              <img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso">
+              <a href="post.php"><img src="Images\Screenshot (5).png" class="card-img-top" alt="caricamento in corso"></a>
               <div class="card-body">
                 <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                <a href="#"><i class="fa-regular fa-comment text-white"></i></a>
+                <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
                 <p class="card-text">isisbernocchi</p>
                 <p class="grey"> 01/12/2022</p>
               </div>              
@@ -121,15 +121,20 @@
   <!-- OFFCANVAS-PUBBLICA -->
   <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas-pubblica" aria-labelledby="offcanvas-pubblica-Label">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title my-5" id="offcanvas-pubblica-Label">Crea un nuovo post</h5>
+      <h5 class="offcanvas-title mt-5" id="offcanvas-pubblica-Label">Crea un nuovo post</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form action="myfile.php">
+      <form action="../function/postImage.php" method="POST">
+        <input type="file" class="form-control text-bg-dark my-4" name="img" accept="image/*" required>
         <label for="description">Inserisci descrizione del post</label>
-        <input type="text" class="form-control rounded-pill text-bg-dark my-3" name="description" id="description">
-        <input type="file" class="form-control text-bg-dark my-5" name="image" accept="image/*" required>
-        <input type="submit" class="btn btn-primary">
+        <textarea name="description" id="description" class="bg-dark text-white rounded mb-4" cols="45" rows="10"></textarea>
+        <label for="text-field">Inserisci luogo</label>
+        <input type="text" name="text-field" id="text-field" class="form-control bg-dark text-white mb-4">
+        <div id="locations">
+          <!-- quí vengono inseriti i luoghi -->
+        </div>
+        <input type="submit" name="submit" class="btn btn-primary text-center mt-5" style="min-width: 100%">
       </form>
     </div>
   </div>
@@ -148,5 +153,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
   <script src="../scripts/saveUsername.js"></script>
+  <script src="../scripts/location.js"></script>
 </body>
 </html>
