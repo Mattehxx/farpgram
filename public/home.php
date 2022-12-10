@@ -36,7 +36,7 @@
                 Altro
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvas-impostazioni" role="button" aria-controls="offcanvas-impostazioni"><span class="link">Impostazioni</span></a></li>
                 <li><a class="dropdown-item" href="#">Mi Piace</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
@@ -150,9 +150,29 @@
     </div>
   </div>
 
+  <!-- OFFCANVAS-IMPOSTAZIONI -->
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas-impostazioni" aria-labelledby="offcanvas-impostazioni-Label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title my-5" id="offcanvas-cerca-Label">Impostazioni:</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="oc-body">
+      <div class="row">
+        <div class="col">
+          <label for="edit profile">Modifica il profilo:</label>
+          <button id="edit-profile" class="btn btn-primary text-center"><a href="myprofile.php"><span class="link">Vai</span></a></button>
+        </div>
+      </div>
+      <div class="row">
+        <label id="contact-us" style="margin-top: 10%;">Contattaci: <a href="mailto:farpenterprise@gmail.com">farpenterprise@gmail.com</a></label>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
   <script src="../scripts/saveUsername.js"></script>
   <script src="../scripts/location.js"></script>
+  <script src="../scripts/clickModify.js"></script>
 </body>
 </html>
