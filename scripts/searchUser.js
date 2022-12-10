@@ -13,8 +13,7 @@ txt.addEventListener("input", function() {
     var value=txt.value;
     request.send("txtSearch="+value);
     
-    request.onload = () => {    //<li class="list-group-item text-bg-dark"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><a href="profile.php" class="accountToSearch link">Mattia</a></li>
-
+    request.onload = () => {    
         var response=JSON.parse(request.responseText);
 
         ul.replaceChildren();

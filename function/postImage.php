@@ -4,7 +4,7 @@
 
   session_start();
 
-  $target_dir = "uploads/";
+  $target_dir = "../uploads/";
   $target_file = $target_dir . basename($_FILES["img"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -55,7 +55,7 @@
       $conn->query($sql);
       $idPost=$conn->insert_id;
       
-      $sql="INSERT INTO images (url, idPost) VALUES ('$target_file', $idPost)"; //Query di inserimento dell'url nel db
+      $sql="INSERT INTO imagevideos (url, idPost) VALUES ('$target_file', $idPost)"; //Query di inserimento dell'url nel db
       $conn->query($sql);
       echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
     } else {

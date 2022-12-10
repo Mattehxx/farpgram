@@ -14,5 +14,3 @@ requestStats.onload = () => {
     follower.innerHTML="Seguaci: "+response['follower'];
     following.innerHTML="Seguiti: "+response['following'];
 }
-
-//Numero di post che ha l'account, aggiungerlo alla query e al json

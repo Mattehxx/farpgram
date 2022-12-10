@@ -96,4 +96,14 @@
 
         return $row['idUser'];
     }
+
+    function getUsername($idUser) {
+        global $conn;
+        
+        $sql="SELECT username FROM accounts WHERE idUser='$idUser'";
+        $result=$conn->query($sql);
+        $row=$result->fetch_assoc();
+
+        return $row['username'];
+    }
 ?>
