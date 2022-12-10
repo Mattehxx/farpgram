@@ -1,4 +1,4 @@
-var div=document.getElementById("card");
+var div=document.getElementById("oc-body");
 var txt=document.getElementById("txtSearch");
 var ul=document.createElement("ul");
 ul.classList.add("list-group");
@@ -13,7 +13,8 @@ txt.addEventListener("input", function() {
     var value=txt.value;
     request.send("txtSearch="+value);
     
-    request.onload = () => {    
+    request.onload = () => {    //<li class="list-group-item text-bg-dark"><img src="Images\colorful.PNG" class="rounded-circle" style="max-width: 2rem"><a href="profile.php" class="accountToSearch link">Mattia</a></li>
+
         var response=JSON.parse(request.responseText);
 
         ul.replaceChildren();
@@ -24,10 +25,9 @@ txt.addEventListener("input", function() {
             ul.appendChild(li);     
 
             var img=document.createElement("img");
-            img.src="../public/Images/colorful.PNG";
+            img.src="../public/Images/Icons/Defalut_pfp.png";
             img.classList.add("rounded-circle");
             img.classList.add("profile-image");
-            img.style.maxWidth="2rem";
             li.appendChild(img);
 
             var a=document.createElement("a");

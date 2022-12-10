@@ -45,8 +45,8 @@
     echo "Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
   } else {
-    if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
 
+    if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
       $description=$_POST['description'];
       $location=$_POST['text-field'];
       $myId=getIdUser($_SESSION['user']);
@@ -58,6 +58,7 @@
       $sql="INSERT INTO imagevideos (url, idPost) VALUES ('$target_file', $idPost)"; //Query di inserimento dell'url nel db
       $conn->query($sql);
       echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
+      header("Location:../public/home.php");
     } else {
       echo "Sorry, there was an error uploading your file.";
     }

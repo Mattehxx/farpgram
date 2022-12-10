@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farpgram-Home</title>
+  <title>Farpgram-myProfile</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -21,8 +21,9 @@
 <body>
   <div class="row">
     <div class="col-2">
-      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom ps-4 side-nav">
+      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
         <div class="header-sidebar">
+          <a href=""><i class="fa-solid fa-list text-white text-center"></i></a>
           <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        
         </div>
         <ul id="functions">
@@ -37,7 +38,7 @@
                 Altro
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvas-impostazioni" role="button" aria-controls="offcanvas-impostazioni"><span class="link">Impostazioni</span></a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
                 <li><a class="dropdown-item" href="#">Mi Piace</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
@@ -67,7 +68,7 @@
         <div class="row border-b mx-auto mt-5">
           <div class="col-2"></div>
           <div class="col-4">
-              <img src="Images\colorful.PNG" class="rounded-circle profile-img">
+              <img src="Images/Icons/Defalut_pfp.png" class="rounded-circle profile-img">
           </div>
           <div class="col-5">
               <p class="text-white fs-3" id="username"><?php echo $_SESSION['user']?></span></p>
@@ -75,8 +76,8 @@
                   <div class="col">
                       <p class="text-white fs-5">nome e cognome</p>
                   </div>
-                  <div class="col" >
-                      <button id="btnModProfile" type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifica</button>
+                  <div class="col">
+                      <button type="button" id="btnModProfile" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifica</button>
                   </div>
               </div>
               <div class="row">
@@ -100,15 +101,7 @@
         </div>
         <div class="row mt-5 me-1 overflow-auto" style="max-height: 50vh">
           <ul id="posts">
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
-              <li class="d-inline"> <a href="post.php"> <img src="Images\Screenshot (5).png" class="post mb-4"> </a> </li>
+              <!-- vengono inseriti i post -->
           </ul>       
         </div>
       </div>
@@ -122,16 +115,16 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form action="myfile.php">
+      <form action="../function/postImage.php" method="POST">
         <input type="file" class="form-control text-bg-dark my-4" name="img" accept="image/*" required>
         <label for="description">Inserisci descrizione del post</label>
         <textarea name="description" id="description" class="bg-dark text-white rounded mb-4" cols="45" rows="10"></textarea>
         <label for="text-field">Inserisci luogo</label>
         <input type="text" name="text-field" id="text-field" class="form-control bg-dark text-white mb-4">
-        <div id="locations">
-          <!-- quí vengono inseriti i luoghi -->
-        </div>
-        <input type="submit" name="submit" class="btn btn-primary text-center">
+          <div id="locations">
+            <!-- quí vengono inseriti i luoghi -->
+          </div>
+        <input type="submit" name="submit" class="btn btn-primary text-center mt-5" style="min-width: 100%">
       </form>
     </div>
   </div>
@@ -147,6 +140,22 @@
     </div>
   </div>
 
+  <!-- MODAL-IMPOSTAZIONI -->
+  <div class="modal fade" id="modal-impostazioni" tabindex="-1" aria-labelledby="modal-impostazioni-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header text-white">
+          <i class="fa-solid fa-gear text-white me-3"></i>
+          <h5 class="modal-title d-inline" id="modal-impostazioni-label">Impostazioni :</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <span class="text-white">Contattaci:</span>  <a href="mailto:farpenterprise@gmail.com">farpenterprise@gmail.com</a></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL-MODIFICA -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -157,55 +166,38 @@
       </div>
       <div class="modal-body">
         <form action="myfile.php">
-          <div class="row">
-            <div class="col-6">
-              <input type="text" class="form-control bg-dark text-white" id="firstName" name="firstName" placeholder="Inserisci nome">
+            <div class="row">
+              <div class="col-6">
+                <input type="text" class="form-control bg-dark text-white" id="firstName" name="firstName" placeholder="Inserisci nome">
+              </div>
+              <div class="col-6">
+                <input type="text" class="form-control bg-dark text-white" id="lastName" name="lastName" placeholder="Inserisci cognome">
+              </div>
             </div>
-            <div class="col-6">
-              <input type="text" class="form-control bg-dark text-white" id="lastName" name="lastName" placeholder="Inserisci cognome">
+            <textarea name="bio" id="bio" class="bg-dark text-white my-4" cols="40" rows="6" placeholder="Inserisci bio..."></textarea>
+            <br>
+            <input type="radio" class="bg-dark text-white d-inline ms-3" name="gender" value="Uomo"><span class="text-white">Uomo</span>
+            <input type="radio" class="bg-dark text-white d-inline ms-3" name="gender" value="Donna"><span class="text-white">Donna</span>
+            <br>
+            <label for="birth-date" class="text-white">Data di compleanno: </label>
+            <input type="date" class="my-3 bg-dark text-white" name="birth-date" id="birth-date">
+            <hr class="border-light">
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-primary position-relative end-0">Save Changes</button>
             </div>
-          </div>
-          <textarea name="bio" id="bio" class="bg-dark text-white my-4" cols="40" rows="6" placeholder="Inserisci bio..."></textarea>
-          <br>
-          <input type="radio" class="bg-dark text-white d-inline ms-3" name="gender" value="Uomo"><span class="text-white">Uomo</span>
-          <input type="radio" class="bg-dark text-white d-inline ms-3" name="gender" value="Donna"><span class="text-white">Donna</span>
-          <input type="radio" class="bg-dark text-white d-inline ms-3" name="gender" value="Altro"><span class="text-white">Altro</span>
-          <br>
-          <label for="birth-date" class="text-white">Data di compleanno: </label>
-          <input type="date" class="my-3 bg-dark text-white" name="birth-date" id="birth-date">
-          <hr class="border-light">
-          <div class="mx-auto">
-            <button type="submit" class="btn btn-primary position-relative end-0">Save Changes</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- OFFCANVAS-IMPOSTAZIONI -->
-<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas-impostazioni" aria-labelledby="offcanvas-impostazioni-Label">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title my-5" id="offcanvas-cerca-Label">Impostazioni:</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body" id="oc-body">
-      <div class="row">
-        <div class="col">
-          <label for="edit profile">Modifica il profilo:</label>
-          <button id="edit-profile" class="btn btn-primary text-center"><a href="myprofile.php"><span class="link">Vai</span></a></button>
+          </form>
         </div>
-      </div>
-      <div class="row">
-        <label id="contact-us" style="margin-top: 10%;">Contattaci: <a href="mailto:farpenterprise@gmail.com">farpenterprise@gmail.com</a></label>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
-  <script src="../scripts/checkStats.js"></script>
+  <script src="../scripts/checkStats.js"></script>      <!-- controlla le stats del profilo -->
   <script src="../scripts/location.js"></script>
-  <script src="../scripts/clickModify.js"></script>
+  <script src="../scripts/profilePosts.js"></script>    <!-- visualizza i post del profilo -->
+  <script src="../scripts/postImage.js"></script>
+
+  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

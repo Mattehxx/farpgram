@@ -1,14 +1,27 @@
 html{
   background-color: rgb(20, 20, 20);
+  overflow: hidden;
+}
+
+.container{
+  padding-left: 0px;
 }
 
 #input{
+  margin: 0px !important;
   min-width: 260px;
-  max-width: 260px;
+  max-width: 320px;
   border-radius: 20px;
-  min-width: 300px;
   border-color: rgb(20, 20, 20) !important;
   background-color: rgb(34, 34, 34) !important;
+}
+
+#logo{
+  margin: 0px !important;
+}
+
+#img{
+  max-width: 300px;
 }
 
 .form-control{
@@ -30,10 +43,9 @@ a{
     --bs-btn-disabled-border-color: purple !important;
 }
 
-@media screen and (max-width: 1200px){
+@media (max-width: 530px){
   
-  #logo:after{
-    content: '<br>';
-  }
-
+  .container{
+    margin-left: 20%;
+  } 
 }

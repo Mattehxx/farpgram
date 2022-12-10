@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farpgram-Home</title>
+  <title>Farpgram-Profile</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -21,30 +21,31 @@
 <body>
   <div class="row">
     <div class="col-2">
-      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4 side-nav">
+      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
         <div class="header-sidebar">
-        <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        </div>
-        <ul id="functions">
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span><a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-magnifying-glass text-white"> </i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <span class="link">CERCA</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-bell text-white"></i> </span><a class="text-white text-decoration-none" href="notifications.php"> <span class="link">NOTIFICHE</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-square-plus text-white"></i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <span class="link">PUBBLICA</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-user text-white"></i> </span><a class="text-white text-decoration-none" href="myprofile.php"> <span class="link">PROFILO</span> </a> </li>
-          <li class="function my-4 ms-4">
-            <div class="btn dropup">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Altro
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvas-impostazioni" role="button" aria-controls="offcanvas-impostazioni"><span class="link">Impostazioni</span></a></li>
-                <li><a class="dropdown-item" href="#">Mi Piace</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-    </aside>
+          <a href=""><i class="fa-solid fa-list text-white text-center"></i></a>
+          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        </div>
+          <ul id="functions">
+            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span><a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
+            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-magnifying-glass text-white"> </i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <span class="link">CERCA</span> </a> </li>
+            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-bell text-white"></i> </span><a class="text-white text-decoration-none" href="notifications.php"> <span class="link">NOTIFICHE</span> </a> </li>
+            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-square-plus text-white"></i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <span class="link">PUBBLICA</span> </a> </li>
+            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-user text-white"></i> </span><a class="text-white text-decoration-none" href="myprofile.php"> <span class="link">PROFILO</span> </a> </li>
+            <li class="function my-4 ms-4">
+              <div class="btn dropup">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Altro
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
+                  <li><a class="dropdown-item" href="#">Mi Piace</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </aside>
     </div>
     <div class="col-10">
       <div class="main-container">
@@ -66,7 +67,7 @@
         <div class="row border-b mx-auto mt-5">
           <div class="col-1"></div>
           <div class="col-4">
-              <img src="Images\colorful.PNG" class="rounded-circle profile-img">
+              <img src="Images/Icons/Defalut_pfp.png" class="rounded-circle profile-img">
           </div>
           <div class="col-5">
             <p class="text-white fs-3"><span id="username"></span></p>
@@ -99,16 +100,8 @@
         </div>
         <div class="row mt-3 me-1 overflow-auto" style="max-height: 50vh">
             <ul id="posts">
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-                <li class="d-inline"><a href="post.php"><img src="Images\Screenshot (5).png" class="post post mb-4"></a></li>
-            </ul>       
+              
+            </ul>  
         </div>
       </div>
     </div>
@@ -121,16 +114,16 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form action="myfile.php">
+      <form action="../function/postImage.php" method="POST">
         <input type="file" class="form-control text-bg-dark my-4" name="img" accept="image/*" required>
         <label for="description">Inserisci descrizione del post</label>
         <textarea name="description" id="description" class="bg-dark text-white rounded mb-4" cols="45" rows="10"></textarea>
         <label for="text-field">Inserisci luogo</label>
         <input type="text" name="text-field" id="text-field" class="form-control bg-dark text-white mb-4">
-        <div id="locations">
-          <!-- quí vengono inseriti i luoghi -->
-        </div>
-        <input type="submit" name="submit" class="btn btn-primary text-center">
+          <div id="locations">
+            <!-- quí vengono inseriti i luoghi -->
+          </div>
+        <input type="submit" name="submit" class="btn btn-primary text-center mt-5" style="min-width: 100%">
       </form>
     </div>
   </div>
@@ -146,33 +139,32 @@
     </div>
   </div>
 
-  <!-- OFFCANVAS-IMPOSTAZIONI -->
-  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas-impostazioni" aria-labelledby="offcanvas-impostazioni-Label">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title my-5" id="offcanvas-cerca-Label">Impostazioni:</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body" id="oc-body">
-      <div class="row">
-        <div class="col">
-          <label for="edit profile">Modifica il profilo:</label>
-          <button id="edit-profile" class="btn btn-primary text-center"><a href="myprofile.php"><span class="link">Vai</span></a></button>
+  <!-- MODAL-IMPOSTAZIONI -->
+  <div class="modal fade" id="modal-impostazioni" tabindex="-1" aria-labelledby="modal-impostazioni-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header text-white">
+          <i class="fa-solid fa-gear text-white me-3"></i>
+          <h5 class="modal-title d-inline" id="modal-impostazioni-label">Impostazioni:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="row">
-        <label id="contact-us" style="margin-top: 10%;">Contattaci: <a href="mailto:farpenterprise@gmail.com">farpenterprise@gmail.com</a></label>
+        <div class="modal-body">
+            <span class="text-white">Contattaci:</span>  <a href="mailto:farpenterprise@gmail.com">farpenterprise@gmail.com</a></label>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
-  <script src="../scripts/saveUsername.js"></script>
   <script src="../scripts/getUsername.js"></script>
-  <script src="../scripts/checkStats.js"></script>
   <script src="../scripts/checkFollow.js"></script>
   <script src="../scripts/follow.js"></script>
+  <script src="../scripts/checkStats.js"></script>
+  <script src="../scripts/profilePosts.js"></script>
   <script src="../scripts/location.js"></script>
-  <script src="../scripts/clickModify.js"></script>
+
+  
+  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

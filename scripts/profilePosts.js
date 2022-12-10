@@ -1,25 +1,25 @@
-var user=document.getElementById("username");
-var ul=document.getElementById("posts");
+var postUser=document.getElementById("username");
+var ulPosts=document.getElementById("posts");
 
 var requestPosts=new XMLHttpRequest();
 requestPosts.open('POST', '../function/profilePosts.php');
 requestPosts.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-var username=user.textContent;
-requestPosts.send("username="+username);
+var postUsername=postUser.textContent;
+requestPosts.send("username="+postUsername);
 
 requestPosts.onload = () => {
     let response=JSON.parse(requestPosts.responseText);
     response.forEach(element => {
 
-        var li=document.createElement("li");
+        let li=document.createElement("li");
         li.classList.add("d-inline");
-        ul.appendChild(li);
+        ulPosts.appendChild(li);
 
-        var a=document.createElement("a");
+        let a=document.createElement("a");
         a.setAttribute("href", "../public/post.php");
         li.appendChild(a);
 
-        var img=document.createElement("img");
+        let img=document.createElement("img");
         img.setAttribute("src", element["url"]);
         img.classList.add("post");
         img.classList.add("mb-4");
@@ -27,7 +27,7 @@ requestPosts.onload = () => {
 
         img.addEventListener('click', function() {
             sessionStorage.setItem("url", img.src);
-            var key="url";
+            let key="url";
             sessionStorage.setItem("lastURLClicked", key);
             
         });

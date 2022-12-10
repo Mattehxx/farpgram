@@ -19,18 +19,20 @@ textField.addEventListener("input", function() {
     request.onload = () => {    
         //TODO controllare che request.status abbia un codice di successo e non 404 e tutti i vari controlli
         jsonResponse = JSON.parse(request.response) // Otteniamo la risposta e la parsiamo in un JSON
-        locations.replaceChildren() // Questo serve a cancellare tutti i sottoelementi della div con id="locations"
+        locations.replaceChildren(); // Questo serve a cancellare tutti i sottoelementi della div con id="locations"
         
         jsonResponse['features'].forEach(element => {  // Andiamo dentro ogni oggetto 'feature' del JSON
             var placeNode = document.createElement('a') // Creiamo un elemento con il tag <p>
             placeNode.setAttribute("href", "#");
             placeNode.classList.add("d-block");
-            //placeNode.classList.add("text-white"); testo bianco
+            placeNode.classList.add("text-white");
+            placeNode.classList.add("text-center");
             placeNode.classList.add("text-decoration-none");
             placeNode.innerHTML = element['properties']['formatted']   // Aggiungiamo questo testo nel paragrafo
             locations.appendChild(placeNode)    // Aggiungiamo il paragrafo nell'html
             placeNode.addEventListener('click', function () {
                 textField.value=placeNode.textContent;
+                locations.replaceChildren();
             });
         });
     }
@@ -53,12 +55,14 @@ function getCurrentPosition() {
         var placeNode = document.createElement('a') // Creiamo un elemento con il tag <p>
         placeNode.setAttribute("href", "#");
         placeNode.classList.add("d-block");
-        //placeNode.classList.add("text-white"); testo bianco
+        placeNode.classList.add("text-white");
+        placeNode.classList.add("text-center");
         placeNode.classList.add("text-decoration-none");
         placeNode.innerHTML = element['name']  // Aggiungiamo questo testo nel paragrafo
         locations.appendChild(placeNode)    // Aggiungiamo il paragrafo nell'html
         placeNode.addEventListener('click', function () {
             textField.value=placeNode.textContent;
+            locations.replaceChildren();
         });
     };
 }

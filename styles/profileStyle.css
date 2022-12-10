@@ -1,5 +1,6 @@
 .profile-img{
     max-width: 200px !important;
+    min-width: 200px !important;
     margin-bottom: 5%;
 }
 
@@ -46,4 +47,11 @@ form textarea{
     --bs-btn-active-border-color: purple !important;
     --bs-btn-disabled-bg: purple !important;
     --bs-btn-disabled-border-color: purple !important;
+}
+
+@media (max-width: 760px) {
+
+    #bio{
+        display: none;
+    }
 }

@@ -5,7 +5,7 @@
 const followed="Account already followed";
 const notFollowed="Account not followed";
 
-var div=document.getElementById("btnDiv");
+var btnDiv=document.getElementById("btnDiv");
 var username=document.getElementById("username");   //Prendo l'h1 contenente l'username della persona che voglio seguire
 var btn=document.createElement("button");   //Creazione bottone segui
 btn.type="button";
@@ -15,7 +15,7 @@ btn.classList.add("position-relative");
 btn.classList.add("top-50");
 btn.classList.add("translate-middle-y");
 btn.setAttribute("id","btnFollow");
-div.appendChild(btn);
+btnDiv.appendChild(btn);
 
 var request=new XMLHttpRequest();
 request.open('POST', '../function/alreadyFollow.php');

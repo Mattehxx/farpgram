@@ -1,11 +1,10 @@
-var div=document.getElementById("btnDiv");
 var username=document.getElementById("username");   //Prendo l'h1 contenente l'username della persona che voglio seguire
-var btn=document.getElementById("btnFollow");
+var btnFollow=document.getElementById("btnFollow");
 
 /**
  * EventListener per la funzione follow al click del bottone
  */
-btn.addEventListener('click', function() {
+btnFollow.addEventListener('click', function() {
     
     var request=new XMLHttpRequest();
     request.open('POST', '../function/follow.php');
@@ -13,17 +12,17 @@ btn.addEventListener('click', function() {
     var toFollow=username.textContent;    //Metto l'username della persona da seguire nella variabile @toFollow
     request.send("toFollow="+toFollow);
 
-    if(btn.textContent=="Segui") {
+    if(btnFollow.textContent=="Segui") {
         request.onload = () => {
-            btn.innerHTML="Seguito";
-            btn.classList.remove("btn-primary");
-            btn.classList.add("btn-outline-primary");
+            btnFollow.innerHTML="Seguito";
+            btnFollow.classList.remove("btn-primary");
+            btnFollow.classList.add("btn-outline-primary");
         }
     } else {
         request.onload = () => {
-            btn.innerHTML="Segui";
-            btn.classList.remove("btn-outline-primary");
-            btn.classList.add("btn-primary");
+            btnFollow.innerHTML="Segui";
+            btnFollow.classList.remove("btn-outline-primary");
+            btnFollow.classList.add("btn-primary");
         }
     }
 })

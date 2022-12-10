@@ -26,10 +26,10 @@ body{
 }
 
 /* SIDE NAVBAR */
-.side-nav{
+#side-nav{
     width: 25%;
-    max-width: 300px;
-    min-width: 230px;
+    max-width: 240px;
+    min-width: 200px;
     background-color: black;
     display: inline-block;
 }
@@ -58,6 +58,10 @@ body{
     --bs-btn-disabled-bg: purple !important;
     --bs-btn-disabled-border-color: purple !important;
     max-width: 100px;
+}
+
+.card{
+    width: 25rem;
 }
 
 /* UTILITIES */
@@ -96,8 +100,32 @@ body{
     border-color: rgb(0, 0, 0);
 }
 
-@media (max-width: 769px) {
-    .username{
+i.fa-list{
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    #side-nav{
+        max-width: 100px;
+        min-width: 100px;
+    }
+
+    #functions{
         display: none;
+    } 
+
+    .header-sidebar h1{
+        display: none;
+    }
+
+    i.fa-list{
+        display: inline-block;
+        font-size: 40px;
+        margin: 50px 8px;
+    }
+
+    .card{
+        width: 20rem;
     }
 }
