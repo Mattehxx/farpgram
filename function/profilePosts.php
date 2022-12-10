@@ -5,7 +5,7 @@
     $username=$_POST['username'];
     $idUser=getIdUser($username);
 
-    $sql="SELECT * FROM posts p INNER JOIN imagevideos img ON p.id=img.idPost WHERE p.idAccount=$idUser";
+    $sql="SELECT * FROM posts p INNER JOIN imagevideos img ON p.id=img.idPost WHERE p.idAccount=$idUser ORDER BY p.actionTime DESC";
     $result=$conn->query($sql);
 
     $i=0;

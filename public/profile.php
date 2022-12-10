@@ -114,7 +114,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <form action="../function/postImage.php" method="POST">
+      <form action="../function/postImage.php" method="POST" enctype="multipart/form-data">
         <input type="file" class="form-control text-bg-dark my-4" name="img" accept="image/*" required>
         <label for="description">Inserisci descrizione del post</label>
         <textarea name="description" id="description" class="bg-dark text-white rounded mb-4" cols="45" rows="10"></textarea>
