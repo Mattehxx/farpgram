@@ -29,7 +29,6 @@ requestPosts.onload = () => {
             sessionStorage.setItem("url", img.src);
             let key="url";
             sessionStorage.setItem("lastURLClicked", key);
-            
         });
     });
 }

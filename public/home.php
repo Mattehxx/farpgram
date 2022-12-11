@@ -63,57 +63,8 @@
             </div>
           </nav>
         </aside>
-        <div class="overflow-auto mt-5" style="max-height: 90vh">
-          <div class="d-block">
-            <div class="mx-auto card text-bg-dark mb-3">
-              <!-- TITLE -->
-              <div class="card-body"> 
-                <img src="Images/Icons/Defalut_pfp.png" class="d-inline profile-image">
-                <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattehxx</a> </h5>
-                <p class="card-text">luogo</p>
-              </div>
-                <!-- BODY -->
-                <a href="post.php"><img src="../uploads/Astronaut.jpg" class="card-img-top" alt="caricamento in corso"></a>
-              <div class="card-body">
-                  <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                  <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
-                  <p class="card-text">isisbernocchi</p>
-                  <p class="grey"> 01/12/2022</p>
-              </div>              
-            </div>
-            <div class="mx-auto card text-bg-dark mb-3">
-              <!-- TITLE -->
-              <div class="card-body">
-                <img src="Images/Icons/Defalut_pfp.png" class="d-inline rounded-circle profile-image">
-                <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link">Marco</a> </h5>
-                <p class="card-text">luogo</p>
-              </div>
-              <!-- BODY -->
-              <a href="post.php"><img src="../uploads/Passage.png" class="card-img-top" alt="caricamento in corso"></a>
-              <div class="card-body">
-                <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
-                <p class="card-text">isisbernocchi</p>
-                <p class="grey"> 01/12/2022</p>
-              </div>              
-            </div>
-            <div class="mx-auto card text-bg-dark mb-3">
-              <!-- TITLE -->
-              <div class="card-body">
-                <img src="Images/Icons/Defalut_pfp.png" class="d-inline rounded-circle profile-image">
-                <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link">Mattia</a> </h5>
-                <p class="card-text">luogo</p>
-              </div>
-              <!-- BODY -->
-              <a href="post.php"><img src="../uploads/Astronaut.jpg" class="card-img-top" alt="caricamento in corso"></a>
-              <div class="card-body">
-                <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
-                <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>
-                <p class="card-text">isisbernocchi</p>
-                <p class="grey"> 01/12/2022</p>
-              </div>              
-            </div>
-          </div>
+        <div class="overflow-auto mt-5" id="post-container" style="max-height: 90vh">
+          
         </div>
       </div>
     </div>
@@ -166,15 +117,14 @@
       </div>
     </div>
   </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="../scripts/homePosts.js"></script>
   <script src="../scripts/searchUser.js"></script>    <!-- ricerca utenti -->
-  <script src="../scripts/saveUsername.js"></script>   <!-- salvataggio ultimo username clickato  -->
   <script src="../scripts/location.js"></script>       <!-- luogo per ricerca utenti --> 
-  <script src="../scripts/getURL.js"></script>         <!-- compilazione dei campi del post  -->
   <script src="../scripts/displaySidebar.js"></script>
+  <script src="../scripts/savePosts.js"></script>
+  <script src="../scripts/saveUsername.js"></script>   <!-- salvataggio ultimo username clickato  -->
 
-
-  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

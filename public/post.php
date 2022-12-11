@@ -151,7 +151,5 @@
   <script src="../scripts/location.js"></script>
   <script src="../scripts/getURL.js"></script>    <!-- compilazione campi del post -->
 
-  
-<!--   <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>
