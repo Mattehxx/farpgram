@@ -23,28 +23,27 @@
     <div class="col-2">
       <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
         <div class="header-sidebar">
-          <a href=""><i class="fa-solid fa-list text-white text-center"></i></a>
-          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        </div>
-          <ul id="functions">
-            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span><a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
-            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-magnifying-glass text-white"> </i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <span class="link">CERCA</span> </a> </li>
-            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-bell text-white"></i> </span><a class="text-white text-decoration-none" href="notifications.php"> <span class="link">NOTIFICHE</span> </a> </li>
-            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-square-plus text-white"></i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <span class="link">PUBBLICA</span> </a> </li>
-            <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-user text-white"></i> </span><a class="text-white text-decoration-none" href="myprofile.php"> <span class="link">PROFILO</span> </a> </li>
-            <li class="function my-4 ms-4">
-              <div class="btn dropup">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Altro
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
-                  <li><a class="dropdown-item" href="#">Mi Piace</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        
+        </div>
+        <ul id="functions">
+          <li class="function"> <a class="text-white text-decoration-none" href="home.php"> <div> <i class="fa-solid fa-house text-white"></i> <span class="text-fun">HOME</span>  </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <div> <i class="fa-solid fa-magnifying-glass text-white"></i> <span class="text-fun">CERCA</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" href="notifications.php"> <div> <i class="fa-solid fa-bell text-white"></i> <span class="text-fun">NOTIFICHE</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <div> <i class="fa-solid fa-square-plus text-white"></i> <span class="text-fun">PUBBLICA</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" href="myprofile.php"> <div> <i class="fa-solid fa-user text-white"></i> <span class="text-fun">PROFILO</span> </div> </a> </li>
+          <div class="btn dropup">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Altro
+            </button>
+            <!-- DROPUP-ALTRO -->
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
+              <li><a class="dropdown-item" href="#">Mi Piace</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
+            </ul>
+          </div>
+        </ul>
       </aside>
     </div>
     <div class="col-10">
@@ -57,7 +56,7 @@
               <div class="d-flex justify-content-end">
                 </div>
                 <a class="navbar-brand" href="myprofile.php">
-                  <img src="Images\Icons\Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
+                  <img src="../uploads/profileImages/Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
                   <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
@@ -65,40 +64,40 @@
         </aside>
 
         <div class="row border-b mx-auto mt-5">
-          <div class="col-1"></div>
+          <div class="col-2 space"></div>
           <div class="col-4">
-              <img src="Images/Icons/Defalut_pfp.png" class="rounded-circle profile-img">
+              <img src="../uploads/profileImages/Defalut_pfp.png" class="rounded-circle profile-img">
           </div>
           <div class="col-5">
             <p class="text-white fs-3"><span id="username"></span></p>
             <div class="row">
                 <div class="col">
-                    <p class="text-white fs-5">nome e cognome</p>
+                    <p class="text-white name">nome e cognome</p>
                 </div>
                 <div class="col" id="btnDiv">
                     <!-- <button type="button" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y">Segui</button> -->
                 </div>
             </div>       
-            <div class="row">
-                <div class="col-2">
-                    <p class="text-white d-inline fs-5 mt-1" id="post"></p>
+            <div class="row stats">
+                <div class="col-3">
+                    <p class="text-white d-inline mt-1" id="post"></p>
                 </div>
-                <div class="col-2">
-                    <p class="text-white d-inline fs-5 mt-1" id="follower"></p>
+                <div class="col-3">
+                    <p class="text-white d-inline mt-1" id="follower"></p>
                 </div>
-                <div class="col-2 ms-4">
-                    <p class="d-inline text-white fs-5 mt-1" id="following"></p>
+                <div class="col-3 ms-4">
+                    <p class="d-inline text-white mt-1" id="following"></p>
                 </div>
             </div>
             <div class="row mt-3">
               <div class="col-8">
-                  <p class="text-white d-inline fs-5 text-break" id="bio">wowowowowowowowowowowowowowowowowowowowow</p>
+                  <p class="text-white text-break" id="bio">wowowowowowowowowowowowowowowowowowowowow</p>
               </div>
             </div>  
           </div>        
-          <div class="col-2"></div>
+          <div class="col-1"></div>
         </div>
-        <div class="row mt-3 me-1 overflow-auto" style="max-height: 50vh">
+        <div class="row mt-3 me-1 of" style="max-height: 50vh">
             <ul id="posts">
               
             </ul>  
@@ -163,8 +162,5 @@
   <script src="../scripts/checkStats.js"></script>
   <script src="../scripts/profilePosts.js"></script>
   <script src="../scripts/location.js"></script>
-
-  
-  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

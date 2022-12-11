@@ -9,4 +9,4 @@ setTimeout(() => {
             sessionStorage.setItem("lastClicked", key);   //Salvo quale è stata la chiave dell'ultimo account cliccato
         });
     }
-}, 700);
+}, 1000);
