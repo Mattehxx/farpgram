@@ -7,7 +7,7 @@ requestHome.send();
 requestHome.onload = () => {
     let response=JSON.parse(requestHome.responseText);
 
-    let i=1;
+    let i=0;
     while (response[i]!=null) {
         response[i].forEach(element => {
             //TITLE

@@ -3,7 +3,6 @@
     require '../function/utility.php';
 
     session_start();
-    //$_SESSION['user']='Mattehxx';
 
     $myId=getIdUser($_SESSION['user']);
 
