@@ -21,30 +21,28 @@
 <body>
   <div class="row">
     <div class="col-2">
-      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
+     <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
         <div class="header-sidebar">
-          <a href=""><i class="fa-solid fa-list text-white text-center"></i></a>
           <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        
         </div>
         <ul id="functions">
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span><a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-magnifying-glass text-white"> </i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <span class="link">CERCA</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-bell text-white"></i> </span><a class="text-white text-decoration-none" href="notifications.php"> <span class="link">NOTIFICHE</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-square-plus text-white"></i> </span><a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <span class="link">PUBBLICA</span> </a> </li>
-          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-user text-white"></i> </span><a class="text-white text-decoration-none" href="myprofile.php"> <span class="link">PROFILO</span> </a> </li>
-          <li class="function my-4 ms-4">
-            <div class="btn dropup">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Altro
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
-                <li><a class="dropdown-item" href="#">Mi Piace</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
-              </ul>
-            </div>
-          </li>
+          <li class="function"> <a class="text-white text-decoration-none" href="home.php"> <div> <i class="fa-solid fa-house text-white"></i> <span class="text-fun">HOME</span>  </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <div> <i class="fa-solid fa-magnifying-glass text-white"></i> <span class="text-fun">CERCA</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" href="notifications.php"> <div> <i class="fa-solid fa-bell text-white"></i> <span class="text-fun">NOTIFICHE</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <div> <i class="fa-solid fa-square-plus text-white"></i> <span class="text-fun">PUBBLICA</span> </div> </a> </li>
+          <li class="function"> <a class="text-white text-decoration-none" href="myprofile.php"> <div> <i class="fa-solid fa-user text-white"></i> <span class="text-fun">PROFILO</span> </div> </a> </li>
+          <div class="btn dropup">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Altro
+            </button>
+            <!-- DROPUP-ALTRO -->
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
+              <li><a class="dropdown-item" href="#">Mi Piace</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
+            </ul>
+          </div>
         </ul>
       </aside>
     </div>
@@ -58,7 +56,7 @@
               <div class="d-flex justify-content-end">
                 </div>
                 <a class="navbar-brand" href="myprofile.php">
-                  <img alt="Logo" width="50" class="rounded-pill d-inline-block" id="myProfileImage">
+                  <img src="../uploads/profileImages/Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
                   <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
@@ -66,40 +64,41 @@
         </aside>
 
         <div class="row border-b mx-auto mt-5">
-          <div class="col-2"></div>
+          <div class="col-2 space"></div>
           <div class="col-4">
-              <img class="rounded-circle profile-img" id="pfpImage">
+              <img src="../uploads/profileImages/Defalut_pfp.png" class="rounded-circle profile-img">
+              <button type="button" id="btnModProfile" class="btn btn-primary rounded-pill btn-media" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifica</button>
           </div>
           <div class="col-5">
               <p class="text-white fs-3" id="username"><?php echo $_SESSION['user']?></span></p>
               <div class="row">
                   <div class="col">
-                      <p class="text-white fs-5" id="name-surname"></p>
+                      <p class="text-white name">nome e cognome</p>
                   </div>
                   <div class="col">
                       <button type="button" id="btnModProfile" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifica</button>
                   </div>
               </div>
-              <div class="row">
-                <div class="col-2">
-                    <p class="text-white d-inline fs-5 mt-1" id="post"></p>
+              <div class="row stats">
+                <div class="col-3">
+                    <p class="text-white d-inline mt-1" id="post"></p>
                 </div>
-                <div class="col-2">
-                    <p class="text-white d-inline fs-5 mt-1" id="follower"></p>
+                <div class="col-3">
+                    <p class="text-white d-inline mt-1" id="follower"></p>
                 </div>
-                <div class="col-2 ms-4">
-                    <p class="d-inline text-white fs-5 mt-1" id="following"></p>
+                <div class="col-3 ms-4">
+                    <p class="d-inline text-white mt-1" id="following"></p>
                 </div>
               </div>
               <div class="row mt-3">
                   <div class="col-8">
-                      <p class="text-white d-inline fs-5 text-break" id="bio"></p>
+                      <p class="text-white text-break" id="bio">wowowowowowowowowowowowowowowowowowowowow</p>
                   </div>
               </div> 
           </div>
-          <div class="col-1"></div>
+          <div class="col-1 space"></div>
         </div>
-        <div class="row mt-5 me-1 overflow-auto" style="max-height: 50vh">
+        <div class="row mt-5 me-1 of" style="max-height: 50vh">
           <ul id="posts">
               <!-- vengono inseriti i post -->
           </ul>       
@@ -165,7 +164,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../function/editAccount.php" method="POST" enctype="multipart/form-data">
+        <form action="myfile.php">
             <div class="row">
               <div class="col-6">
                 <input type="text" class="form-control bg-dark text-white" id="firstName" name="firstName" placeholder="Inserisci nome">
@@ -196,10 +195,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
   <script src="../scripts/checkStats.js"></script>      <!-- controlla le stats del profilo -->
-  <script src="../scripts/myProfileImage.js"></script>
   <script src="../scripts/location.js"></script>
   <script src="../scripts/profilePosts.js"></script>    <!-- visualizza i post del profilo -->
   <script src="../scripts/postImage.js"></script>
-  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>
