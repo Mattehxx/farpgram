@@ -20,30 +20,32 @@
 <body>
   <div class="row">
     <div class="col-2">
-    <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
+      <aside class="no-overflow position-absolute top-0 start-0 sticky-bottom px-4" id="side-nav">
         <div class="header-sidebar">
-          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>        
+          <a id="btn-display" class="close"><i class="fa-solid fa-list text-white text-center"></i></a>
+          <h1 class="fs-4 text-center mb-4"><span><img src="Images\Logo_FARP3.png" alt="Farp_Logo" id="img-logo" onclick="this.src='Images/Logo_FARP3_dead.png'"></span><span class="text-white">Farpgram</span></h1>
         </div>
         <ul id="functions">
-          <li class="function"> <a class="text-white text-decoration-none" href="home.php"> <div> <i class="fa-solid fa-house text-white"></i> <span class="text-fun">HOME</span>  </div> </a> </li>
-          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <div> <i class="fa-solid fa-magnifying-glass text-white"></i> <span class="text-fun">CERCA</span> </div> </a> </li>
-          <li class="function"> <a class="text-white text-decoration-none" href="notifications.php"> <div> <i class="fa-solid fa-bell text-white"></i> <span class="text-fun">NOTIFICHE</span> </div> </a> </li>
-          <li class="function"> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <div> <i class="fa-solid fa-square-plus text-white"></i> <span class="text-fun">PUBBLICA</span> </div> </a> </li>
-          <li class="function"> <a class="text-white text-decoration-none" href="myprofile.php"> <div> <i class="fa-solid fa-user text-white"></i> <span class="text-fun">PROFILO</span> </div> </a> </li>
-          <div class="btn dropup">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Altro
-            </button>
-            <!-- DROPUP-ALTRO -->
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
-              <li><a class="dropdown-item" href="#">Mi Piace</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
-            </ul>
-          </div>
+          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-house text-white"></i> </span> <a class="text-white text-decoration-none" href="home.php"> <span class="link">HOME</span> </a> </li>
+          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-magnifying-glass text-white"> </i> </span> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-cerca" role="button" aria-controls="offcanvas-cerca"> <span class="link">CERCA</span> </a> </li>
+          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-bell text-white"></i> </span> <a class="text-white text-decoration-none" href="notifications.php"> <span class="link">NOTIFICHE</span> </a> </li>
+          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-square-plus text-white"></i> </span> <a class="text-white text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvas-pubblica" role="button" aria-controls="offcanvas-pubblica"> <span class="link">PUBBLICA</span> </a> </li>
+          <li class="function my-4 ms-5"> <span> <i class="fa-solid fa-user text-white"></i> </span> <a class="text-white text-decoration-none" href="myprofile.php"> <span class="link">PROFILO</span> </a> </li>
+          <li class="function my-4 ms-4">
+            <div class="btn dropup">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Altro
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" data-bs-toggle="modal" href="#modal-impostazioni" role="button" aria-controls="modal-impostazioni">Impostazioni</a></li>
+                <li><a class="dropdown-item" href="#">Mi Piace</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="logIn.html">Esci</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
-      </aside>
+    </aside>
     </div>
     <div class="col-10">
       <div class="main-container">
@@ -55,15 +57,14 @@
               <div class="d-flex justify-content-end">
                 </div>
                   <a class="navbar-brand" href="myprofile.php">
-                  <img src="../uploads/profileImages/Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
+                  <img src="Images\Icons\Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
                   <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
           </nav>
         </aside>
-        
         <div class="overflow-auto mt-5" id="post-container" style="max-height: 90vh">
-            
+          <!-- Inserimento dei post -->
         </div>
       </div>
     </div>
@@ -116,17 +117,14 @@
       </div>
     </div>
   </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script src="../scripts/homePosts.js"></script>       <!-- visualizzo post nella home -->
+  <script src="../scripts/homePosts.js"></script>
   <script src="../scripts/searchUser.js"></script>    <!-- ricerca utenti -->
   <script src="../scripts/location.js"></script>       <!-- luogo per ricerca utenti --> 
-  <script src="../scripts/savePosts.js"></script>        <!-- salvataggio ultimo post clickato -->
+  <script src="../scripts/displaySidebar.js"></script>
+  <script src="../scripts/savePosts.js"></script>
   <script src="../scripts/saveUsername.js"></script>   <!-- salvataggio ultimo username clickato  -->
-  
-  
 
-
-  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>
