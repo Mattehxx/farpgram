@@ -21,7 +21,14 @@
         $sql="SELECT * FROM posts p INNER JOIN imagevideos img ON p.id=img.idPost WHERE p.idAccount=$idAccountFollowed ORDER BY p.actionTime DESC";
         $result=$conn->query($sql);
         $j=0;
+
+        $sql="SELECT imageURL FROM accounts WHERE idUser='$idAccountFollowed'";
+        $res=$conn->query($sql);
+        $rowImg=$res->fetch_assoc();
+
+        $pfpURL=$rowImg['imageURL'];
         while($row=$result->fetch_assoc()) {
+            $json[$i][$j]['imageURL']=$pfpURL;
             $json[$i][$j]['username']=getUsername($idAccountFollowed);
             $json[$i][$j]['body']=$row['body'];
             $json[$i][$j]['location']=$row['location'];

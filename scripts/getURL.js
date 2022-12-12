@@ -1,4 +1,5 @@
 var imgURL=document.getElementById("img"); 
+var pfpPost=document.getElementById("pfpPost"); 
 var userURL=document.getElementById("user");
 var bodyURL=document.getElementById("descrizione");
 var postLocation=document.getElementById("location");
@@ -19,6 +20,8 @@ requestURL.send("url="+tmp);
 
 requestURL.onload = () => {
     let response=JSON.parse(requestURL.responseText);
+
+    pfpPost.src=response['pfpImage'];
     
     userURL.innerHTML=response['username'];
 

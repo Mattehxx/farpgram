@@ -8,8 +8,16 @@
     $result=$conn->query($sql);
     $row=$result->fetch_assoc();
 
+    $myIdUser=$row['idAccount'];
     $username=getUsername($row['idAccount']);
 
+    $sql="SELECT imageURL FROM accounts WHERE idUser='$myIdUser'";
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+
+    $pfpURL=$row['imageURL'];
+
+    $json['pfpImage']=$pfpURL;
     $json['body']=$row['body'];
     $json['location']=$row['location'];
     $json['actionTime']=$row['actionTime'];

@@ -31,7 +31,7 @@ body{
     max-width: 240px;
     min-width: 200px;
     background-color: black;
-    display: inline-block;
+    position: relative;
 }
 
 #functions{
@@ -39,13 +39,25 @@ body{
 }
 
 .function{
+    white-space: nowrap;
     list-style: none;
-    padding-top: 20%;
+    margin-top: 20%; 
     font-size: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.function div{
+    padding: 10px;
 }
 
 .function:hover{
-    color: purple;
+    background-color: purple;
+}
+
+#functions .btn.dropup{
+    position: absolute;
+    bottom: 50px;
 }
 
 .btn-primary{
@@ -76,15 +88,6 @@ body{
     overflow: hidden;
 }
 
-.link{
-    color: white;
-    text-decoration: none;
-}
-
-.link:hover{
-    color: purple;
-} 
-
 #content{
     height: 100vh;
     overflow: auto;
@@ -100,9 +103,15 @@ body{
     border-color: rgb(0, 0, 0);
 }
 
-i.fa-list{
-    display: none;
+.link{
+    color: white;
+    text-decoration: none;
 }
+
+.link:hover{
+    color: purple;
+}
+
 
 @media (max-width: 760px) {
 
@@ -111,21 +120,39 @@ i.fa-list{
         min-width: 100px;
     }
 
-    #functions{
+    #functions .function .text-fun{
         display: none;
     } 
 
-    .header-sidebar h1{
+    .header-sidebar h1 span.text-white{
+        /* opacity: 0; */
         display: none;
     }
 
-    i.fa-list{
-        display: inline-block;
-        font-size: 40px;
-        margin: 50px 8px;
+    #img-logo{
+        margin-top: 20px;
+        min-width: 70px;
+        width: 70px;
     }
 
     .card{
         width: 20rem;
+    }
+
+    .function{
+        margin-top: 30px;
+    }
+
+    .function div{
+        padding: 0px !important;
+    }
+
+    .function i{
+        align-items: center;
+        padding-left: 5px;
+    }
+
+    #functions .btn.dropup{
+        left: 0px;
     }
 }

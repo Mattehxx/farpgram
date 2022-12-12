@@ -25,7 +25,7 @@ txt.addEventListener("input", function() {
             ul.appendChild(li);     
 
             var img=document.createElement("img");
-            img.src="../public/Images/Icons/Defalut_pfp.png";
+            img.src=element["imageURL"];
             img.classList.add("rounded-circle");
             img.classList.add("profile-image");
             li.appendChild(img);

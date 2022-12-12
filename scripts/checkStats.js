@@ -15,8 +15,11 @@ requestStats.send("username="+profileUsername);
 requestStats.onload = () => {
     let response=JSON.parse(requestStats.responseText);
     pfpImage.src=response['imageURL'];
-    let firstLastName=response['firstName']+" "+response['lastName'];
-    nameSurname.innerHTML=firstLastName;
+    if(response['firstName'] != null || response['lastName'] != null){
+        let firstLastName=response['firstName']+" "+response['lastName'];
+        nameSurname.innerHTML=firstLastName;
+    }
+    
     post.innerHTML="Post <br>"+response['post'];
     follower.innerHTML="Seguaci <br>"+response['follower'];
     following.innerHTML="Seguiti <br>"+response['following'];

@@ -23,9 +23,11 @@ requestHome.onload = () => {
             mxAuto.appendChild(cardBody);
 
             let profileImage=document.createElement("img");
-            //TODO aggiungere foto profilo
+            profileImage.src=element["imageURL"];
             profileImage.classList.add("d-inline");
             profileImage.classList.add("profile-image");
+            profileImage.classList.add("rounded-circle");
+            profileImage.classList.add("me-2");
             cardBody.appendChild(profileImage);
 
             let cardTitle=document.createElement("h5");

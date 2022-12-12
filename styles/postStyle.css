@@ -1,4 +1,57 @@
-.comments{
-    min-height: 200px !important;
-    max-height: 200px !important;
+.comment-col{
+    max-height: 280px
+}
+
+.main{
+    margin-left: 20%;
+}
+
+#comment{
+    margin: 1px 20px; 
+    max-width: 350px
+}
+
+@media (max-width: 1130px) {
+    
+    .main{
+        margin-left: 7%;
+    }
+
+    .card{
+        width: 25rem !important;
+    }
+    
+}
+
+@media (max-width: 1060px) {
+    
+    .main{
+        margin-left: 30%;
+    }
+    
+}
+
+@media (max-width: 760px) {
+    
+    .main{
+        margin-left: 7%;
+    }
+    
+}
+
+@media (max-width: 560px) {
+    
+    .main{
+        margin-left: 7%;
+    }
+
+    .card{
+        width: 20rem !important;
+    }
+
+    #comment{
+        margin: 1px 20px; 
+        max-width: 250px
+    }
+    
 }
