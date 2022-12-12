@@ -58,7 +58,7 @@
               <div class="d-flex justify-content-end">
                 </div>
                 <a class="navbar-brand" href="myprofile.php">
-                  <img src="Images\Icons\Defalut_pfp.png" alt="Logo" width="50" class="d-inline-block">
+                  <img alt="Logo" width="50" class="rounded-pill d-inline-block" id="myProfileImage">
                   <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
@@ -68,13 +68,13 @@
         <div class="row border-b mx-auto mt-5">
           <div class="col-2"></div>
           <div class="col-4">
-              <img src="Images/Icons/Defalut_pfp.png" class="rounded-circle profile-img">
+              <img class="rounded-circle profile-img" id="pfpImage">
           </div>
           <div class="col-5">
               <p class="text-white fs-3" id="username"><?php echo $_SESSION['user']?></span></p>
               <div class="row">
                   <div class="col">
-                      <p class="text-white fs-5">nome e cognome</p>
+                      <p class="text-white fs-5" id="name-surname"></p>
                   </div>
                   <div class="col">
                       <button type="button" id="btnModProfile" class="btn btn-primary rounded-pill position-relative top-50 translate-middle-y" data-bs-toggle="modal" data-bs-target="#exampleModal">Modifica</button>
@@ -93,7 +93,7 @@
               </div>
               <div class="row mt-3">
                   <div class="col-8">
-                      <p class="text-white d-inline fs-5 text-break" id="bio">wowowowowowowowowowowowowowowowowowowowow</p>
+                      <p class="text-white d-inline fs-5 text-break" id="bio"></p>
                   </div>
               </div> 
           </div>
@@ -165,7 +165,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="myfile.php">
+        <form action="../function/editAccount.php" method="POST" enctype="multipart/form-data">
             <div class="row">
               <div class="col-6">
                 <input type="text" class="form-control bg-dark text-white" id="firstName" name="firstName" placeholder="Inserisci nome">
@@ -181,6 +181,8 @@
             <br>
             <label for="birth-date" class="text-white">Data di compleanno: </label>
             <input type="date" class="my-3 bg-dark text-white" name="birth-date" id="birth-date">
+            <label for="pfp-image" class="text-white mt-2">Inserisci foto profilo </label>
+            <input type="file" class="form-control text-bg-dark" name="pfp-image" accept="image/*">
             <hr class="border-light">
             <div class="mx-auto">
               <button type="submit" class="btn btn-primary position-relative end-0">Save Changes</button>
@@ -194,10 +196,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="../scripts/searchUser.js"></script>
   <script src="../scripts/checkStats.js"></script>      <!-- controlla le stats del profilo -->
+  <script src="../scripts/myProfileImage.js"></script>
   <script src="../scripts/location.js"></script>
   <script src="../scripts/profilePosts.js"></script>    <!-- visualizza i post del profilo -->
   <script src="../scripts/postImage.js"></script>
-
   <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

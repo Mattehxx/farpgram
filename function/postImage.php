@@ -58,7 +58,7 @@
       $sql="INSERT INTO imagevideos (url, idPost) VALUES ('$target_file', $idPost)"; //Query di inserimento dell'url nel db
       $conn->query($sql);
       echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
-      header("Location:../public/home.php");
+      header("Location:../public/myProfile.php");
     } else {
       echo "Sorry, there was an error uploading your file.";
     }

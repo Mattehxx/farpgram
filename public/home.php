@@ -64,7 +64,7 @@
           </nav>
         </aside>
         <div class="overflow-auto mt-5" id="post-container" style="max-height: 90vh">
-          
+          <!-- Inserimento dei post -->
         </div>
       </div>
     </div>
