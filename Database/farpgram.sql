@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 10, 2022 at 10:43 PM
+-- Generation Time: Dec 13, 2022 at 09:11 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `username` varchar(50) COLLATE utf8_unicode_520_ci NOT NULL,
-  `firstname` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
-  `lastname` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
+  `firstName` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
+  `lastName` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `birthDate` date DEFAULT NULL,
   `bio` varchar(200) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `imageURL` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL DEFAULT '../uploads/profileImages/Default_pfp.png',
@@ -44,7 +44,7 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `username`, `firstname`, `lastname`, `birthDate`, `bio`, `imageURL`, `actionTime`, `idSex`, `idUser`) VALUES
+INSERT INTO `accounts` (`id`, `username`, `firstName`, `lastName`, `birthDate`, `bio`, `imageURL`, `actionTime`, `idSex`, `idUser`) VALUES
 (1, 'Mattehxx', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-16 14:28:21', NULL, 1),
 (2, 'Mattia', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-29 22:56:21', NULL, 2),
 (3, 'Marco', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-29 22:56:35', NULL, 3),
