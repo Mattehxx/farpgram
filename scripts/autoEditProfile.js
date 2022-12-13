@@ -6,17 +6,14 @@ var autoBirthDate=document.getElementById("birth-date");
 var autoPfp=document.getElementById("pfp-image");
 var autoBtnModProfile=document.getElementById("btnModProfile");
 
-autoBtnModProfile.addEventListener('click',function() {
+autoBtnModProfile.addEventListener('click', function() {
 
-    var request=new XMLHttpRequest();
-    request.open('POST', '../function/autoEditProfile.php');
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    var value=txt.value;
-    request.send("auto="+value);
+    var requestAutoEdit=new XMLHttpRequest();
+    requestAutoEdit.open('GET', '../function/autoEditProfile.php');
+    requestAutoEdit.send();
 
-    request.onload = () => {
-
-        var response=JSON.parse(request.responseText);
+    requestAutoEdit.onload = () => {
+        var response=JSON.parse(requestAutoEdit.responseText);
 
         txtFirstName.value=response['firstName'];
         txtLastName.value=response['LastName'];

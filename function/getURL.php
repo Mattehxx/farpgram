@@ -12,10 +12,10 @@
     $username=getUsername($row['idAccount']);
 
     $sql="SELECT imageURL FROM accounts WHERE idUser='$myIdUser'";
-    $result=$conn->query($sql);
-    $row=$result->fetch_assoc();
+    $resultPfpImage=$conn->query($sql);
+    $rowPfpImage=$resultPfpImage->fetch_assoc();
 
-    $pfpURL=$row['imageURL'];
+    $pfpURL=$rowPfpImage['imageURL'];
 
     $json['pfpImage']=$pfpURL;
     $json['body']=$row['body'];

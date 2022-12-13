@@ -3,11 +3,11 @@
     require 'utility.php';
 
     session_start();
-    $_SESSION['user']="simonefornoni_";
+    //$_SESSION['user']="simonefornoni_";
     $username=$_SESSION['user'];
     $myId=getIdUser($username);
 
-    $sql="SELECT * FROM accounts a INNER JOIN sex s ON a.idSex=s.id WHERE idUser=$myId";
+    $sql="SELECT * FROM accounts a INNER JOIN sex s ON a.idSex=s.id WHERE a.idUser=$myId";
     $result=$conn->query($sql);
     $row=$result->fetch_assoc();
 

@@ -56,7 +56,7 @@
               <div class="d-flex justify-content-end">
                 </div>
                 <a class="navbar-brand" href="myprofile.php">
-                  <img id="myProfileImage" width="50" class="d-inline-block">
+                  <img id="myProfileImage" width="50" class="d-inline-block rounded-circle">
                   <span class="text-white"><?php echo $_SESSION['user'] ?></span> 
                 </a>   
             </div>
@@ -71,7 +71,7 @@
               <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link" id="user"> </a></h5>
               <p class="card-text" id="location"> </p>
             </div>
-            <img src="" class="card-img-top" id="img" alt="caricamento in corso">
+            <img class="card-img-top" id="img" alt="caricamento in corso">
             <div class="card-body">
               <a href="#"><i class="fa-regular fa-heart text-white"></i></a> <!-- <i class="fa-solid fa-heart"></i> -->
               <a href="post.php"><i class="fa-regular fa-comment text-white"></i></a>

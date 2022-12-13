@@ -11,6 +11,7 @@ var valueURL=sessionStorage.getItem(lastURLClicked);
 imgURL.src=valueURL;
 let pos=valueURL.search("/uploads/");
 let tmp=valueURL.substring(pos);
+console.log(tmp);
 tmp=".."+tmp;
 
 var requestURL=new XMLHttpRequest();
@@ -25,6 +26,7 @@ requestURL.onload = () => {
     
     userURL.innerHTML=response['username'];
 
+    console.log(response);
     bodyURL.innerHTML=response['body'];
 
     postLocation.innerHTML=response['location'];

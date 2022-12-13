@@ -11,6 +11,10 @@
     max-width: 350px
 }
 
+.card-img-top{
+    max-height: 24rem;
+}
+
 @media (max-width: 1130px) {
     
     .main{

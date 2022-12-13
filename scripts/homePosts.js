@@ -58,6 +58,7 @@ requestHome.onload = () => {
             postImage.classList.add("cardPost");
             postImage.classList.add("card-img-top");
             postImage.alt="Caricamento in corso";
+            postImage.style.maxHeight="25rem";
             imageRef.appendChild(postImage);
 
             let cardBody2=document.createElement("div");

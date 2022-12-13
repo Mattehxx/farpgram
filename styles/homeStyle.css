@@ -76,6 +76,8 @@ body{
     width: 25rem;
 }
 
+.card
+
 /* UTILITIES */
 .main-container{
     min-height: 100vh;
@@ -137,6 +139,10 @@ body{
 
     .card{
         width: 20rem;
+    }
+
+    .imageSize{
+        max-height: 15rem;
     }
 
     .function{
