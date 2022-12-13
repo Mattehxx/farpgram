@@ -124,8 +124,5 @@
   <script src="../scripts/savePosts.js"></script>        <!-- salvataggio ultimo post clickato -->
   <script src="../scripts/saveUsername.js"></script>   <!-- salvataggio ultimo username clickato  -->
   <script src="../scripts/myProfileImage.js"></script>
-
-
-  <!-- <script src="../scripts/clickModify.js"></script> -->
 </body>
 </html>

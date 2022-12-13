@@ -1,5 +1,6 @@
 .comment-col{
-    max-height: 280px
+    max-height: 280px;
+    margin-left: 10px;
 }
 
 .main{
@@ -8,11 +9,11 @@
 
 #comment{
     margin: 1px 20px; 
-    max-width: 350px
+    max-width: 350px;
 }
 
-.card-img-top{
-    max-height: 24rem;
+.post-col{
+    padding: 0px;
 }
 
 @media (max-width: 1130px) {
@@ -31,6 +32,14 @@
     
     .main{
         margin-left: 30%;
+    }
+
+    .comment-col{
+        margin-left: 0px;
+    }
+
+    .card{
+        max-height: 18rem;
     }
     
 }
@@ -56,6 +65,14 @@
     #comment{
         margin: 1px 20px; 
         max-width: 250px
+    }
+    
+}
+
+@media (max-height: 1100px) {
+
+    #comment{
+        max-width: 250px;
     }
     
 }

@@ -76,8 +76,6 @@ body{
     width: 25rem;
 }
 
-.card
-
 /* UTILITIES */
 .main-container{
     min-height: 100vh;
@@ -114,7 +112,6 @@ body{
     color: purple;
 }
 
-
 @media (max-width: 760px) {
 
     #side-nav{
@@ -141,10 +138,6 @@ body{
         width: 20rem;
     }
 
-    .imageSize{
-        max-height: 15rem;
-    }
-
     .function{
         margin-top: 30px;
     }
@@ -160,5 +153,49 @@ body{
 
     #functions .btn.dropup{
         left: 0px;
+    }
+}
+
+@media (max-height: 1100px) {
+
+    .card-img-top{
+       width: 20rem;
+       height: 20rem;
+       object-fit: contain;
+    }
+
+    .card{
+        max-width: 20rem;
+    }
+}
+
+@media (max-height: 800px) {
+
+    .function{
+        margin-top: 5%; 
+    }
+}   
+
+@media (max-height: 700px) {
+
+    .function{
+        margin-top: 2%; 
+    }
+}   
+
+@media (max-height: 630px) {
+
+    .function{
+        margin-top: 0px; 
+        font-size: 15px;
+        padding: 8px;
+    }
+}
+
+@media (max-height: 530px) {
+
+    .function{ 
+        font-size: 15px;
+        padding: 4px;   
     }
 }

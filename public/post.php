@@ -65,7 +65,7 @@
 
         <div class="row text-center mt-5 main">
           <!-- <div class="col-2 space"></div> -->
-          <div class="col-4 text-start card text-bg-dark d-inline-flex">
+          <div class="col-4 text-start card text-bg-dark d-inline-flex post-col">
             <div class="card-body">
               <img id="pfpPost" class="d-inline rounded-circle profile-image me-1">
               <h5 class="card-title d-inline"> <a href="profile.php" class="accountToSearch text-decoration-none link" id="user"> </a></h5>
