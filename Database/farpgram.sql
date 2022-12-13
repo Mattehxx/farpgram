@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 10, 2022 at 10:43 PM
+-- Generation Time: Dec 13, 2022 at 09:22 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `username` varchar(50) COLLATE utf8_unicode_520_ci NOT NULL,
-  `firstname` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
-  `lastname` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
+  `firstName` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
+  `lastName` varchar(50) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `birthDate` date DEFAULT NULL,
   `bio` varchar(200) COLLATE utf8_unicode_520_ci DEFAULT NULL,
   `imageURL` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL DEFAULT '../uploads/profileImages/Default_pfp.png',
@@ -39,16 +39,6 @@ CREATE TABLE `accounts` (
   `idSex` int(11) DEFAULT NULL,
   `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`id`, `username`, `firstname`, `lastname`, `birthDate`, `bio`, `imageURL`, `actionTime`, `idSex`, `idUser`) VALUES
-(1, 'Mattehxx', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-16 14:28:21', NULL, 1),
-(2, 'Mattia', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-29 22:56:21', NULL, 2),
-(3, 'Marco', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-11-29 22:56:35', NULL, 3),
-(4, 'simonefornoni_', NULL, NULL, NULL, NULL, '../uploads/profileImages/Default_pfp.png', '2022-12-10 19:01:15', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -77,13 +67,6 @@ CREATE TABLE `follow` (
   `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
---
--- Dumping data for table `follow`
---
-
-INSERT INTO `follow` (`id`, `idAccount`, `idAccountFollowed`, `actionTime`) VALUES
-(1, 4, 1, '2022-12-10 21:32:25');
-
 -- --------------------------------------------------------
 
 --
@@ -92,6 +75,7 @@ INSERT INTO `follow` (`id`, `idAccount`, `idAccountFollowed`, `actionTime`) VALU
 
 CREATE TABLE `history` (
   `id` int(11) NOT NULL,
+  `actionTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `idAccount` int(11) NOT NULL,
   `idAccountResearched` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -107,16 +91,6 @@ CREATE TABLE `imagevideos` (
   `url` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
   `idPost` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
---
--- Dumping data for table `imagevideos`
---
-
-INSERT INTO `imagevideos` (`id`, `url`, `idPost`) VALUES
-(1, '../uploads/Passage.png', 1),
-(2, '../uploads/Screenshot (1).png', 2),
-(3, '../uploads/novb.jpg', 3),
-(4, '../uploads/omg.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -144,16 +118,6 @@ CREATE TABLE `posts` (
   `actionTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `idAccount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `body`, `location`, `actionTime`, `idAccount`) VALUES
-(1, 'Ao bella!', '20025 Legnano MI, Italia', '2022-12-10 13:19:14', 1),
-(2, 'dasd', '20025 Legnano MI, Italia', '2022-12-10 21:27:13', 4),
-(3, 'novb', '20025 Legnano MI, Italia', '2022-12-10 21:28:07', 4),
-(4, 'Che bello il CELO', 'Abu Dhabi, Emirato di Abu Dhabi, Emirati Arabi Uniti', '2022-12-10 22:23:30', 4);
 
 -- --------------------------------------------------------
 
@@ -185,16 +149,6 @@ CREATE TABLE `users` (
   `email` varchar(60) COLLATE utf8_unicode_520_ci NOT NULL,
   `password` varchar(32) COLLATE utf8_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'teorove04@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
-(2, 'ciao@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
-(3, 'prova@gmail.com', 'e93b509fc81a6d2aed44d12a5e3cee5e'),
-(4, 'simonefornoni04@gmail.com', '0879ab98bb7e220b5add2bb9081eebf8');
 
 --
 -- Indexes for dumped tables
